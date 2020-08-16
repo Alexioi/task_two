@@ -1,0 +1,25 @@
+{
+    "name": "task_two",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "server": "webpack-dev-server"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "css-loader": "^4.2.1",
+        "html-webpack-plugin": "^4.3.0",
+        "mini-css-extract-plugin": "^0.10.0",
+        "pug": "^3.0.0",
+        "pug-loader": "^2.4.0",
+        "sass": "^1.26.10",
+        "sass-loader": "^9.0.3",
+        "style-loader": "^1.2.1",
+        "webpack": "^4.44.1",
+        "webpack-cli": "^3.3.12",
+        "webpack-dev-server": "^3.11.0"
+    }
+}
