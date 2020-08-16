@@ -1,0 +1,16 @@
+extends ../main.pug
+
+block content
+    .div
+        +palette('Dark Shade 100%','#1F2041')(class="dark-shade")
+        +palette('Dark Shade 75%','#1F2041')(class="dark-shade_75")
+        +palette('Dark Shade 50%','#1F2041')(class="dark-shade_50")
+        +palette('Dark Shade 25%','#1F2041')(class="dark-shade_25")
+        +palette('Dark Shade 5%','#1F2041')(class="dark-shade_05")
+        +palette('Purpe','#BC9CFF')(class="purple")
+        +palette('Green','#6FCF97')(class="green")
+    .div
+        +type('H1','This one is the sub-section or widget title')(class="font-h1")
+        +type('H2','Next one is the item title inside widgets')(class="font-h2")
+        +type('H3','This is a label or CTA text')(class="font-h3")
+        +type('Body','This is the body text which is used for most of the design, like paragraphs, lists, etc.')(class="font-body")

@@ -1,3 +1,27 @@
 $dark-shade: #1f2041
 $purple: #bc9cff
 $green: #6fcf97
+$font-color: #1f2041
+
+
+.dark-shade
+    background: $dark-shade
+    &_75
+        @extend .dark-shade
+        opacity: 0.75
+    &_50
+        @extend .dark-shade
+        opacity: 0.50
+    &_25
+        @extend .dark-shade
+        opacity: 0.25
+    &_05
+        @extend .dark-shade
+        opacity: 0.05
+    
+
+.purple
+    background: $purple
+
+.green
+    background: $green

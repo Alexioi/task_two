@@ -42,8 +42,8 @@ module.exports = {
             filename: 'index.html'
         }),
         new HtmlWebpackPlugin({
-            template: './src/template/index2.pug',
-            filename: 'index2.html'
+            template: './src/template/ui_kit.pug',
+            filename: 'ui_kit.html'
 
         }),
         // new HtmlWebpackPlugin({
