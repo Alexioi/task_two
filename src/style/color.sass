@@ -2,24 +2,23 @@ $dark-shade: #1f2041
 $purple: #bc9cff
 $green: #6fcf97
 $font-color: #1f2041
+$main-gradient: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
 
+=color($color, $opacity)
+    background: $color
+    opacity: $opacity
 
 .dark-shade
-    background: $dark-shade
+    +color($dark-shade, 1)
     &_75
-        @extend .dark-shade
-        opacity: 0.75
+        +color($dark-shade, 0.75)
     &_50
-        @extend .dark-shade
-        opacity: 0.50
+        +color($dark-shade, 0.5)
     &_25
-        @extend .dark-shade
-        opacity: 0.25
+        +color($dark-shade, 0.25)
     &_05
-        @extend .dark-shade
-        opacity: 0.05
+        +color($dark-shade, 0.05)
     
-
 .purple
     background: $purple
 

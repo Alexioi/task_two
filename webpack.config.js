@@ -13,27 +13,27 @@ module.exports = {
 
     module: {
         rules: [{
-                test: /\.pug$/,
-                use: 'pug-loader'
-            },
-
-            {
-                test: /\.(sa|sc|c)ss$/,
-                use: [{
-                        loader: MiniCssExtractPlugin.loader,
-                    },
-                    'css-loader',
-                    'sass-loader',
-                ],
-            },
-
-        ],
-
+            test: /\.pug$/,
+            use: 'pug-loader'
+        }, {
+            test: /\.(sa|sc|c)ss$/,
+            use: [{
+                    loader: MiniCssExtractPlugin.loader,
+                },
+                'css-loader',
+                'sass-loader',
+            ],
+        }, {
+            test: /\.(woff|woff2|eot|ttf|otf)$/,
+            use: [
+                'file-loader',
+            ],
+        }, ],
     },
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
         compress: true,
-        port: 9000
+        port: 9001
     },
     plugins: [
         new MiniCssExtractPlugin(),
@@ -46,10 +46,5 @@ module.exports = {
             filename: 'ui_kit.html'
 
         }),
-        // new HtmlWebpackPlugin({
-        //     template: './src/romb.pug',
-        //     filename: 'romb.html'
-
-        // })
     ],
 };

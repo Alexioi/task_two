@@ -1,0 +1,13 @@
+mixin dropdown(items)   
+    div
+        input 
+        button.test \/
+        #dropdown_hiden
+            ul
+                each item in items     
+                    li= item 
+                        button -
+                        input
+                        button +
+            .button очистить
+            .button применить

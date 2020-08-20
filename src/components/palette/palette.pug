@@ -2,6 +2,5 @@ mixin palette(header, sharp)
     .palette
         .palette__item(class!=attributes.class)
         .palette__text
-            span.palette__header= header 
-            br
-            span.palette__sharp= sharp
+            span.palette__header.font-color= header 
+            span.palette__sharp.font-color= sharp

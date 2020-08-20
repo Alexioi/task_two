@@ -1,5 +1,9 @@
 include ./components/palette/palette
 include ./components/type/type
+include ./components/header/header
+include ./components/bulletlist/bulletlist
+include ./components/button/button
+include ./components/dropdown/dropdown
 
 
 doctype html
@@ -7,6 +11,6 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Document
+        block title
     body.container
         block content
