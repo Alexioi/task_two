@@ -1,0 +1,9 @@
+mixin ratebutton(name, rate)
+    - var raiting = [false,false,false,false,false]
+    - raiting[rate - 1] = true
+    .rating__group
+        input(type="radio", name=name, value="1" checked=raiting[0]).rating__star 
+        input(type="radio", name=name, value="2" checked=raiting[1]).rating__star
+        input(type="radio", name=name, value="3" checked=raiting[2]).rating__star
+        input(type="radio", name=name, value="4" checked=raiting[3]).rating__star
+        input(type="radio", name=name, value="5" checked=raiting[4]).rating__star

@@ -28,6 +28,11 @@ module.exports = {
             use: [
                 'file-loader',
             ],
+        }, {
+            test: /\.(png|jpe?g|gif|svg)$/i,
+            use: [{
+                loader: 'file-loader',
+            }, ],
         }, ],
     },
     devServer: {
@@ -42,8 +47,18 @@ module.exports = {
             filename: 'index.html'
         }),
         new HtmlWebpackPlugin({
-            template: './src/template/ui_kit.pug',
-            filename: 'ui_kit.html'
+            template: './src/template/colors_and_type.pug',
+            filename: 'colors_and_type.html'
+
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/template/form_elements.pug',
+            filename: 'form_elements.html'
+
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/template/headers_footers.pug',
+            filename: 'headers_footers.html'
 
         }),
     ],

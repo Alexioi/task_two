@@ -1,13 +1,28 @@
-mixin dropdown(items)   
-    div
-        input 
-        button.test \/
-        #dropdown_hiden
-            ul
+//- mixin dropdown(items, number)   
+//-     div
+//-         input
+//-         button.test \/
+//-         .dropdown_hiden
+//-             ul
+//-                 each item in items     
+//-                     li= item 
+//-                         button.minus -
+//-                         spam.number= number
+//-                         button.plus +
+//-             .button очистить
+//-             .button применить
+
+mixin dropdown(items, number)   
+    .dropdown
+        input.dropdown__info(type="text" value="Сколько гостей")
+        button.dropdown__button-visible \/
+        .dropdown__visible.hide
+            ul.dropdown-list
                 each item in items     
-                    li= item 
-                        button -
-                        input
-                        button +
-            .button очистить
-            .button применить
+                    li.dropdown__item= item 
+                        div
+                            button.dropdown__button-minus -
+                            spam.number= number
+                            button.dropdown__button-plus +
+            button.button очистить
+            button.button применить

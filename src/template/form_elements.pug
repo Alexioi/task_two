@@ -1,0 +1,25 @@
+extends ../main.pug
+
+block title
+    title Form elements
+block content
+    .row
+        .column
+            div
+                +button('CLICK ME')(class="button")
+                +button('CLICK ME')(class="button button_hover")
+            div
+                +button('CLICK ME')(class="button_empty")
+                +button('CLICK ME')(class="button_empty button_hover")
+            div
+                +button('CLICK ME')(class="button_text")
+                +button('CLICK ME')(class="button_text button_hover")
+            div
+                +button('CLICK ME')(class="button")
+    .row
+        +dropdown(['взрослые','дети','младенцы'],'0')  
+    .row
+        +ratebutton('raiting1', 4)  
+        +ratebutton('raiting2', 5)  
+        
+        
