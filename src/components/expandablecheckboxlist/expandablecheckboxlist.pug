@@ -1,0 +1,11 @@
+mixin expandablecheckboxlist(items)
+    .expandablecheckboxlist
+        .expandablecheckboxlist__title expandable checkbox list
+            .expandablecheckboxlist__more 
+        div
+            each item in items
+                .expandablecheckboxlist__item
+                    label.expandablecheckboxlist_label
+                        input(type="checkbox", checked= item[1]).expandablecheckboxlist__input
+                        span.expandablecheckboxlist__checkbox  
+                        span.expandablecheckboxlist__text= item[0]
