@@ -1,0 +1,33 @@
+.likebutton
+    border-radius: 10px
+    width: 40px
+    height: 20px
+    border: 1px solid rgba(31, 32, 65, 0.25)
+    display: flex
+    align-items: center
+
+.likebutton__image
+    position: relative
+    background-image: url(./svg/likebutton_off.svg)
+    width: 10px
+    height: 8px
+    left: 5px
+
+.likebutton__number
+    position: relative
+    font-family: Montserrat
+    font-style: normal
+    font-weight: normal
+    font-size: 10px
+    line-height: 12px
+    text-align: center
+    color: rgba(31, 32, 65, 0.25)
+    left: 10px
+
+.likebutton__input
+    appearance: none
+    position: absolute
+
+.likebutton__input:checked + .likebutton__image
+    background-image: url(./svg/likebutton_on.svg)
+    border-color: #BC9CFF

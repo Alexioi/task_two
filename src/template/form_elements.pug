@@ -4,7 +4,7 @@ block title
     title Form elements
 block content
     .row
-        .column
+        .column_33
             div
                 +button('CLICK ME')(class="button")
                 +button('CLICK ME')(class="button button_hover")
@@ -17,20 +17,28 @@ block content
             div
                 +button('CLICK ME')(class="button")
     .row
-        +dropdown(['взрослые','дети','младенцы'],'0')  
+        .column_33
+            +dropdown(['взрослые','дети','младенцы'],'0')  
     .row
-        +ratebutton('raiting1', 4)  
-        +ratebutton('raiting2', 5)  
+        .column_33
+            +ratebutton('raiting1', 4)  
+            +ratebutton('raiting2', 5)  
     .row
-        +radiobuttons
+        .column_33
+            +caption('Radio Buttons')
+            +radiobuttons
     .row 
-        +expandablecheckboxlist([['Завтрак'],['Письменный стол', 'checked'],
-        ['Стул для кормления','checked'],['Кроватка','checked'],['Телевизор'],['Шампунь'],
-        ['Телевизор'],['Шампунь']])
-        +expandablecheckboxlist([['Завтрак'],['Письменный стол', 'checked'],
-        ['Стул для кормления','checked'],['Кроватка','checked'],['Телевизор'],['Шампунь'],
-        ['Телевизор'],['Шампунь']])
-      
+        .column_33
+            +expandablecheckboxlist([['Завтрак'],['Письменный стол', 'checked'],['Стул для кормления','checked'],['Кроватка','checked'],['Телевизор'],['Шампунь'],['Телевизор'],['Шампунь']])
+            +expandablecheckboxlist([['Завтрак'],['Письменный стол', 'checked'],['Стул для кормления','checked'],['Кроватка','checked'],['Телевизор'],['Шампунь'],['Телевизор'],['Шампунь']])
+    .row
+        .column_33
+            +likebutton('2')
+            +likebutton('12', 'checked')
+    .row
+        .column_33
+            +caption('Pagination')
+            +pagination
 
 
         
