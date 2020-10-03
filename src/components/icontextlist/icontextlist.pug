@@ -1,0 +1,7 @@
+mixin icontextlist(items)
+    each item in items
+        .icontextlist
+            img(src= item[0])
+            div.icontextlist__text
+                h3.icontextlist__header= item[1]
+                span= item[2]
