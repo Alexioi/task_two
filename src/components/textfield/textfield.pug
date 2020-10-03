@@ -1,0 +1,5 @@
+mixin textfield(text, hover)
+    - var hoverTrue = ''
+    if hover== 'true'
+        - hoverTrue= 'textfield_hover'
+    textarea(placeholder=text wrap="off" class=hoverTrue).textfield
