@@ -9,7 +9,19 @@
     &:hover
         opacity: 0.5
 
-// .button_empty
+.button_border
+    background: $main-gradient
+    border-radius: 22px
+    border: none
+    padding: 1px 1px
+    &:focus
+        outline: none       
+    &:hover
+        opacity: 0.5
+    div
+        background: #ffffff
+        padding: 9px 19px
+        border-radius: 22px
 
 .button_text
     color: $purple
@@ -20,6 +32,19 @@
         outline: none       
     &:hover
         color: rgba(31, 32, 65, 0.5)
+
+.button_long
+    background: $main-gradient
+    border-radius: 22px
+    border: none
+    padding: 10px 0
+    width: 320px
+    color: white
+    text-transform: uppercase
+    &:focus
+        outline: none       
+    &:hover
+        opacity: 0.5
 
 .button_hover
     opacity: 0.5

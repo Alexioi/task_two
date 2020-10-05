@@ -1,2 +1,10 @@
-mixin button(text)
-    button.font-h3(class!=attributes.class)= text
+mixin button(text, type)
+    if type == 'border'
+        button.button_border.font-h3
+            div= text
+    else if type == 'text'
+        button.button_text.font-h= text
+    else if type == 'long'
+        button.button_long.font-h= text
+    else
+        button.button.font-h3= text

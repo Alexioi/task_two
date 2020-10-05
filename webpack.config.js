@@ -64,5 +64,10 @@ module.exports = {
             filename: 'headers_footers.html'
 
         }),
+        new HtmlWebpackPlugin({
+            template: './src/template/cards.pug',
+            filename: 'cards.html'
+
+        }),
     ],
 };

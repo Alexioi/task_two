@@ -5,17 +5,18 @@ block title
 block content
     .row
         .column_33
+            +caption('Buttons')
             div
-                +button('CLICK ME')(class="button")
-                +button('CLICK ME')(class="button button_hover")
+                +button('CLICK ME')
+                +button('CLICK ME')
             div
-                +button('CLICK ME')(class="button_empty")
-                +button('CLICK ME')(class="button_empty button_hover")
+                +button('CLICK ME', 'border')
+                +button('CLICK ME', 'border')
             div
-                +button('CLICK ME')(class="button_text")
-                +button('CLICK ME')(class="button_text button_hover")
+                +button('CLICK ME', 'text')
+                +button('CLICK ME', 'text')
             div
-                +button('CLICK ME')(class="button")
+                +button('перейти к оплате', 'long')
     .row
         .column_33
             +dropdown(['взрослые','дети','младенцы'],'0')  
@@ -51,7 +52,5 @@ block content
             +textfield('Email')
             +caption('Text Field')
             +textfield('This is pretty awesome', 'true')
-    
-
-        
-        
+            +caption('Masced Text Field')
+            +maskedtextfield
