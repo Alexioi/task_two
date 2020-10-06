@@ -19,7 +19,7 @@ block content
                 +button('перейти к оплате', 'long')
     .row
         .column_33
-            +dropdown(['взрослые','дети','младенцы'],'0')  
+            +dropdown
     .row
         .column_33
             +ratebutton('raiting1', 4)  
@@ -54,3 +54,6 @@ block content
             +textfield('This is pretty awesome', 'true')
             +caption('Masced Text Field')
             +maskedtextfield
+    .row
+        .column_33
+            +rangeslider

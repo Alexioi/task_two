@@ -1,0 +1,16 @@
+mixin registration
+    .registration.card
+        h3.registration__header Войти
+        +textfield('Имя')
+        +textfield('Фамилия')
+        +radiobuttons
+        span Дата рождения
+        +maskedtextfield
+        span Данные для входа в сервис
+        +textfield('Email')
+        +textfield('Пароль')
+        .registration__button
+            +button('Войти', 'long')
+        .registration__creat
+            span.registration__text Уже есть аккаунт на Toxin?
+            +button('создать', 'border')
