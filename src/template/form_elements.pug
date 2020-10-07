@@ -5,6 +5,25 @@ block title
 block content
     .row
         .column_33
+            +caption('Text Field')
+            +textfield('Email')
+            +caption('Text Field')
+            +textfield('This is pretty awesome', 'true')
+            +caption('Masced Text Field')
+            +maskedtextfield
+            +dropdown
+        .column_33  
+            +caption('Radio Buttons')
+            +radiobuttons
+            +likebutton('2')
+            +likebutton('12', 'checked')
+            +caption('Radio Buttons')
+            .ratebuttons
+                .ratebuttons__item 
+                    +ratebutton('raiting1', 4)  
+                +ratebutton('raiting2', 5)
+        .column_33
+            +rangeslider
             +caption('Buttons')
             div
                 +button('CLICK ME')
@@ -17,43 +36,18 @@ block content
                 +button('CLICK ME', 'text')
             div
                 +button('перейти к оплате', 'long')
-    .row
-        .column_33
-            +dropdown
-    .row
-        .column_33
-            +ratebutton('raiting1', 4)  
-            +ratebutton('raiting2', 5)  
-    .row
-        .column_33
-            +caption('Radio Buttons')
-            +radiobuttons
-    .row 
-        .column_33
-            +expandablecheckboxlist([['Завтрак'],['Письменный стол', 'checked'],['Стул для кормления','checked'],['Кроватка','checked'],['Телевизор'],['Шампунь'],['Телевизор'],['Шампунь']])
-            +expandablecheckboxlist([['Завтрак'],['Письменный стол', 'checked'],['Стул для кормления','checked'],['Кроватка','checked'],['Телевизор'],['Шампунь'],['Телевизор'],['Шампунь']])
-    .row
-        .column_33
-            +likebutton('2')
-            +likebutton('12', 'checked')
-    .row
-        .column_33
             +caption('Pagination')
             +pagination
     .row
-        .column_33       
-            +bulletlist('Bullet list',['Нельзя с питомцами','Без вечеринок и мероприятий','Время прибытия — после 13:00, а выезд до 12:00'])   
-    .row
-        .column_33 
-            +icontextlist([['./smile.svg','Комфорт', 'Шумопоглщающие стены'],['./home.svg','Удобство', 'Окно в каждой из спален'],])
+        .column_33
+            +expandablecheckboxlist([['Завтрак'],['Письменный стол', 'checked'],['Стул для кормления','checked'],['Кроватка','checked'],['Телевизор'],['Шампунь'],['Телевизор'],['Шампунь']])
+            +expandablecheckboxlist([['Завтрак'],['Письменный стол', 'checked'],['Стул для кормления','checked'],['Кроватка','checked'],['Телевизор'],['Шампунь'],['Телевизор'],['Шампунь']])
+        .column_33
+        
+        .column_33
+            +bulletlist('Bullet list',['Нельзя с питомцами','Без вечеринок и мероприятий','Время прибытия — после 13:00, а выезд до 12:00']) 
     .row
         .column_33
-            +caption('Text Field')
-            +textfield('Email')
-            +caption('Text Field')
-            +textfield('This is pretty awesome', 'true')
-            +caption('Masced Text Field')
-            +maskedtextfield
-    .row
-        .column_33
-            +rangeslider
+            +icontextlist([['./smile.svg','Комфорт', 'Шумопоглщающие стены'],['./home.svg','Удобство', 'Окно в каждой из спален'],])           
+        .column
+

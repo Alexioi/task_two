@@ -1,10 +1,10 @@
 mixin button(text, type)
     if type == 'border'
-        button.button_border.font-h3
+        button.button_border
             div= text
     else if type == 'text'
-        button.button_text.font-h= text
+        button.button_text= text
     else if type == 'long'
-        button.button_long.font-h= text
+        button.button_long= text
     else
-        button.button.font-h3= text
+        button.button= text

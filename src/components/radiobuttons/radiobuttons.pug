@@ -1,6 +1,9 @@
 mixin radiobuttons
-    div
-        input(type="radio", name="sex" checked)
-        span Мужчина
-        input(type="radio", name="sex")
-        span Женщина
+    label.radiobutton__item
+        input(type="radio", name="sex" checked).radiobutton__input
+        span.radiobutton__checkbox
+        span.radiobutton__text Мужчина
+    label.radiobutton__item  
+        input(type="radio", name="sex").radiobutton__input
+        span.radiobutton__checkbox
+        span.radiobutton__text Женщина
