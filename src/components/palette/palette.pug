@@ -1,6 +1,18 @@
-mixin palette(header, sharp)
-    .palette
-        .palette__item(class!=attributes.class)
-        .palette__text
-            span.palette__header.font-color= header 
-            span.palette__sharp.font-color= sharp
+mixin palette
+
+    - var palettes = [
+    -    { header: 'Dark Shade 100%', color: '#1F2041', classColor: 'palette__color-dark-shade' },
+    -    { header: 'Dark Shade 75%', color: '#1F2041', classColor: 'palette__color-dark-shade-75' },
+    -    { header: 'Dark Shade 50%', color: '#1F2041', classColor: 'palette__color-dark-shade-50' },
+    -    { header: 'Dark Shade 25%', color: '#1F2041', classColor: 'palette__color-dark-shade-25' },
+    -    { header: 'Dark Shade 5%', color: '#1F2041', classColor: 'palette__color-dark-shade-5' },
+    -    { header: 'Purpe', color: '#BC9CFF', classColor: 'palette__color-purple' },
+    -    { header: 'Green', color: '#6FCF97', classColor: 'palette__color-green' }
+    - ]
+
+    each palette in palettes
+        .palette
+            div(class= palette.classColor).palette__color
+            .palette__text
+                h3= palette.header 
+                span= palette.color
