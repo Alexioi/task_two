@@ -2,52 +2,50 @@ extends ../main.pug
 
 block title
     title Form elements
-block content
-    .row
-        .column_33
-            +caption('Text Field')
-            +textfield('Email')
-            +caption('Text Field')
-            +textfield('This is pretty awesome', 'true')
-            +caption('Masced Text Field')
-            +maskedtextfield
-            +dropdown
-        .column_33  
-            +caption('Radio Buttons')
-            +radiobuttons
-            +likebutton('2')
-            +likebutton('12', 'checked')
-            +caption('Radio Buttons')
-            .ratebuttons
-                .ratebuttons__item 
-                    +ratebutton('raiting1', 4)  
-                +ratebutton('raiting2', 5)
-        .column_33
-            +rangeslider
-            +caption('Buttons')
-            div
+block content  
+    .form-elements__logo
+    .form-elements__main
+        .form-elements__section
+            .form-elements__column
+                +caption('Text Field')
+                +state('Default')
+                +textfield('Email')
+                +caption('Text Field')
+                +state('Hover / Focus')
+                +textfield('This is pretty awesome', 'true')
+                +caption('Dropdown')
+                +state('Default')
+                +dropdown
+                +caption('Masced Text Field')
+                +state('Default')
+                +maskedtextfield 
+                +caption('Radio Buttons')
+            .form-elements__column-gap
+            .form-elements__column
+                +radiobuttons
+                +likebutton('2')
+                +likebutton('12', 'checked')
+                +caption('Radio Buttons')
+                +ratebutton('raiting1', 4)  
+                +ratebutton('raiting2', 5)  
+            .form-elements__column-gap
+            .form-elements__column
+                +rangeslider
+                +caption('Buttons')
                 +button('CLICK ME')
                 +button('CLICK ME')
-            div
                 +button('CLICK ME', 'border')
                 +button('CLICK ME', 'border')
-            div
                 +button('CLICK ME', 'text')
                 +button('CLICK ME', 'text')
-            div
                 +button('перейти к оплате', 'long')
-            +caption('Pagination')
-            +pagination
-    .row
-        .column_33
-            +expandablecheckboxlist([['Завтрак'],['Письменный стол', 'checked'],['Стул для кормления','checked'],['Кроватка','checked'],['Телевизор'],['Шампунь'],['Телевизор'],['Шампунь']])
-            +expandablecheckboxlist([['Завтрак'],['Письменный стол', 'checked'],['Стул для кормления','checked'],['Кроватка','checked'],['Телевизор'],['Шампунь'],['Телевизор'],['Шампунь']])
-        .column_33
-        
-        .column_33
-            +bulletlist('Bullet list',['Нельзя с питомцами','Без вечеринок и мероприятий','Время прибытия — после 13:00, а выезд до 12:00']) 
-    .row
-        .column_33
-            +icontextlist([['./smile.svg','Комфорт', 'Шумопоглщающие стены'],['./home.svg','Удобство', 'Окно в каждой из спален'],])           
-        .column
-
+                +caption('Pagination')
+                +pagination
+        .form-elements__section
+            .form-elements__column
+                +expandablecheckboxlist([['Завтрак'],['Письменный стол', 'checked'],['Стул для кормления','checked'],['Кроватка','checked'],['Телевизор'],['Шампунь'],['Телевизор'],['Шампунь']])
+                +expandablecheckboxlist([['Завтрак'],['Письменный стол', 'checked'],['Стул для кормления','checked'],['Кроватка','checked'],['Телевизор'],['Шампунь'],['Телевизор'],['Шампунь']])
+                +bulletlist('Bullet list',['Нельзя с питомцами','Без вечеринок и мероприятий','Время прибытия — после 13:00, а выезд до 12:00']) 
+        .form-elements__section
+            .form-elements__column
+                +icontextlist([['./smile.svg','Комфорт', 'Шумопоглщающие стены'],['./home.svg','Удобство', 'Окно в каждой из спален'],])           
