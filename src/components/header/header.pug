@@ -1,14 +1,9 @@
 mixin header
-    .column
-        .login Toxin
-    .column
-        ul.menu
-            li.menu_item  О нас
-            li.menu_item  Услуги
-            li.menu_item  Вакансии
-            li.menu_item  Новости
-            li.menu_item  Соглашения
-            
-            
-            
-            
+  .header 
+    +logo
+    .header__nav
+      +menu
+      .header__button
+        +button('Войти', 'border')
+      .header__button
+        +button('Зарегистрироваться')

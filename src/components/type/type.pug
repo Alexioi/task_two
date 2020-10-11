@@ -8,7 +8,6 @@ mixin type
 
     each typee in types
         .type
-            div(class= typee.classTag).type__tag
-                span= typee.tag
-            div(class= typee.classText)
-                span= typee.text
+            div(class= typee.classTag).type__tag= typee.tag
+            div
+            div(class= typee.classText)= typee.text

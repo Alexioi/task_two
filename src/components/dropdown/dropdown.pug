@@ -2,20 +2,19 @@ mixin dropdown
 
   - var items = ['взрослые','дети','младенцы']
   - var number = ['0', '2', '5']
-  - var i = 0
   
   .dropdown
     input.dropdown__info(type="text" value="Сколько гостей" readonly)
     button.dropdown__button-visible \/
     .dropdown__visible.dropdown__visible_hide
       ul.dropdown__list
-        each item in items     
+        each item, i in items     
           li.dropdown__item= item 
             .dropdown__button-list
               button.dropdown__button.dropdown__button-minus -
               span.dropdown__number= number[i]
               button.dropdown__button.dropdown__button-plus +
-          - i += 1
+          
       .dropdown__bot-button
         +button('очистить', 'text')
         +button('применить', 'text')
