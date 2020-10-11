@@ -1,9 +1,12 @@
-mixin header
+mixin header(login, name)
   .header 
     +logo
     .header__nav
       +menu
-      .header__button
-        +button('Войти', 'border')
-      .header__button
-        +button('Зарегистрироваться')
+      if login
+        .header__user-name= name
+      else
+        .header__button
+          +button('Войти', 'border')
+        .header__button
+          +button('Зарегистрироваться')
