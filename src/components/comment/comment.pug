@@ -1,0 +1,11 @@
+mixin comment(comment)
+
+  .comment__header
+    img(src="./test.png", alt="").comment__img
+    .wrapper
+      h3.comment__author= comment.author
+      span.comment__date= comment.date
+  .comment__content
+    .comment__like
+      +likebutton('2')
+    .comment__text= comment.text

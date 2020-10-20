@@ -1,6 +1,4 @@
-mixin bulletlist(header, items)
-    .column
-        span.font-h3= header
-        ul.bullet-list
-            each item in items
-                li.font-body= item
+mixin bulletlist(items)
+    ul.bullet-list
+        each item in items
+            li.bullet-list__item= item
