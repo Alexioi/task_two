@@ -1,12 +1,11 @@
 include ./components/palette/palette
 include ./components/type/type
 include ./components/header/header
-include ./components/bulletlist/bulletlist
+include ./components/bullet_list/bullet_list
 include ./components/button/button
 include ./components/dropdown/dropdown
 include ./components/ratebutton/ratebutton
 include ./components/radiobuttons/radiobuttons
-include ./components/expandablecheckboxlist/expandablecheckboxlist
 include ./components/likebutton/likebutton
 include ./components/caption/caption
 include ./components/pagination/pagination
@@ -20,15 +19,17 @@ include ./components/logo/logo
 include ./components/menu/menu
 include ./components/footer/footer
 include ./components/comment/comment
-
-include ./cards/login/login
-include ./cards/registretion/registretion
+include ./components/login/login
+include ./components/registretion/registretion
+include ./components/room_foto/room_foto
+include ./components/checkbox_list/checkbox_list
 
 doctype html
 html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="icon" href="./favicon.ico" type="image/x-icon")
         block title
     body.container
         block content

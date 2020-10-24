@@ -1,0 +1,50 @@
+.checkbox_list__header
+  display: flex
+  justify-content: space-between
+  
+.checkbox-list__item
+  display: block
+  margin-bottom: 11px
+
+.checkbox-list__input
+  appearance: none
+
+.checkbox-list__description:before
+  content: ''
+  display: block
+  float: left
+  width: 20px
+  height: 20px
+  background-image: url(./svg/checkbox_off.svg)
+  margin-right: 10px
+
+.checkbox-list__input:checked + .checkbox-list__description:before
+  background-image: url(./svg/checkbox_on.svg)
+
+.checkbox-list__header-description
+  font-family: Montserrat
+  font-style: normal
+  font-weight: bold
+  font-size: 14px
+  line-height: 18px
+  color: rgba(31, 32, 65, 0.75)
+  margin: 0 0 5px 0
+
+.checkbox-list__sub-description
+  font-family: Montserrat
+  font-style: normal
+  font-weight: normal
+  font-size: 12px
+  line-height: 14px
+  color: rgba(31, 32, 65, 0.5)
+  margin: 0
+  padding-left: 30px
+
+.checkbox-list__text-description
+  font-family: Montserrat
+  font-style: normal
+  font-weight: normal
+  font-size: 14px
+  line-height: 18px
+  color: rgba(31, 32, 65, 0.5)
+  margin: 0

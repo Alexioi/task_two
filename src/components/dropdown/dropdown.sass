@@ -1,3 +1,6 @@
+.dropdown__input
+  display: flex
+
 .dropdown__list
   padding: 0px
   margin: 0px
@@ -7,9 +10,8 @@
 .dropdown__button-visible
   height: 44px
   width: 44px
-  position: relative
-  right: 44px
-  border: none
+  border: 1px solid rgba(31, 32, 65, 0.5)
+  border-left: none
   background: none
   &:focus
     outline: none 
@@ -21,9 +23,11 @@
 
 .dropdown__info
   +font-body
+  display: block
   height: 44px
   padding-left: 15px
   border: 1px solid rgba(31, 32, 65, 0.5)
+  border-right: none
   border-radius: 2px 2px 0 0
   background: #ffffff
   &:focus

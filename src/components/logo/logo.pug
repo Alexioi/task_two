@@ -1,3 +1,6 @@
-mixin logo 
+mixin logo(full)
   a(href='./index.html')
-    img(src='./full_logo.svg' alt='Toxin').logo__img
+    if full
+      img(src='./full_logo.svg' alt='Toxin').logo__img-full
+    else
+      img(src='./logo.svg' alt='Toxin').logo__img
