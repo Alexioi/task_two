@@ -1,6 +1,17 @@
 .checkbox_list__header
   display: flex
   justify-content: space-between
+
+.checkbox_list__btn
+  height: 8px
+  width: 12px
+  margin-top: 4px
+
+.checkbox_list__btn__hide
+  background-image: url(./components/checkbox_list/img/expand_more_off.svg)
+
+.checkbox_list__btn__visible
+  background-image: url(./components/checkbox_list/img/expand_more_on.svg)
   
 .checkbox-list__item
   display: block
@@ -9,7 +20,7 @@
 .checkbox-list__input
   appearance: none
 
-.checkbox-list__description:before
+.checkbox-list__text:before
   content: ''
   display: block
   float: left
@@ -18,10 +29,10 @@
   background-image: url(./svg/checkbox_off.svg)
   margin-right: 10px
 
-.checkbox-list__input:checked + .checkbox-list__description:before
+.checkbox-list__input:checked + .checkbox-list__text:before
   background-image: url(./svg/checkbox_on.svg)
 
-.checkbox-list__header-description
+.checkbox-list__header-desc
   font-family: Montserrat
   font-style: normal
   font-weight: bold
@@ -30,17 +41,18 @@
   color: rgba(31, 32, 65, 0.75)
   margin: 0 0 5px 0
 
-.checkbox-list__sub-description
+.checkbox-list__sub-desc
   font-family: Montserrat
   font-style: normal
   font-weight: normal
   font-size: 12px
   line-height: 14px
   color: rgba(31, 32, 65, 0.5)
+  display: block
   margin: 0
   padding-left: 30px
 
-.checkbox-list__text-description
+.checkbox-list__desc
   font-family: Montserrat
   font-style: normal
   font-weight: normal

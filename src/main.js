@@ -3,6 +3,7 @@ import './main.sass'
 // import jQuery from 'jquery';
 
 import './components/dropdown/dropdown'
+import './components/checkbox_list/checkbox_list'
 // import './components/rangeslider/rangeslider'
 // import './components/calendar/calendar'
 
