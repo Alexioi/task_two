@@ -7,15 +7,14 @@ mixin dropdown
     .dropdown__input
       input.dropdown__info(type="text" value="Сколько гостей" readonly)
       button.dropdown__button-visible \/
-    .dropdown__visible.dropdown__visible_hide
+    .dropdown__visible
       ul.dropdown__list
         each item, i in items     
           li.dropdown__item= item 
             .dropdown__button-list
               button.dropdown__button.dropdown__button-minus -
               span.dropdown__number= number[i]
-              button.dropdown__button.dropdown__button-plus +
-          
+              button.dropdown__button.dropdown__button-plus +          
       .dropdown__bot-button
         +button('очистить', 'text')
         +button('применить', 'text')

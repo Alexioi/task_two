@@ -1,24 +1,24 @@
-mixin checkbox_list(items, checkboxType)
-  if checkboxType == 'expandable'
+mixin checkbox_list(checkboxList)
+  if checkboxList.type == 'expandable'
     .checkbox_list__header
-      +caption('Test')
-      .checkbox_list__btn.checkbox_list__btn__hide
+      +caption(checkboxList.caption)
+      .checkbox_list__btn.checkbox-list__btn__hide
     div(class='checkbox_list__visible')
-      each item in items
+      each item in checkboxList.items
         label.checkbox-list__item
-          input(type="checkbox").checkbox-list__input 
+          input(type='checkbox' checked=item.checked).checkbox-list__input 
           .checkbox-list__text
-            span.checkbox-list__desc= item
-  else if checkboxType == 'rich'
-    each item in items
+            span= item.text
+  else if checkboxList.type == 'rich'
+    each item in checkboxList.items
       label.checkbox-list__item
-        input(type="checkbox").checkbox-list__input 
+        input(type='checkbox' checked=item.checked).checkbox-list__input 
         .checkbox-list__text
-          span.checkbox-list__header-desc= item.header
+          span.checkbox-list__desc= item.desc
           span.checkbox-list__sub-desc= item.sub
   else
-    each item in items
+    each item in checkboxList.items
       label.checkbox-list__item
-        input(type="checkbox").checkbox-list__input 
+        input(type='checkbox' checked=item.checked).checkbox-list__input 
         .checkbox-list__text
-          span.checkbox-list__desc= item
+          span= item.text
