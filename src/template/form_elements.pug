@@ -1,96 +1,98 @@
 extends ../main.pug
 
 block title
-    title Form elements
+  title Form elements
 block content  
-    .form-elements__logo
-        +logo
-    .form-elements__main
-        .form-elements__section
-            .form-elements__column
-                +caption('Text Field')
-                +state('Default')
-                +textfield('Email')
-                +caption('Text Field')
-                +state('Hover / Focus')
-                +textfield('This is pretty awesome', 'true')
-                +caption('Dropdown')
-                +state('Default')
-                +dropdown
-                +dropdown
-                +caption('Masced Text Field')
-                +state('Default')
-                +maskedtextfield 
-                +caption('Radio Buttons')
-            .form-elements__column-gap
-            .form-elements__column
-                +radiobuttons
-                +likebutton('2')
-                +likebutton('12', 'checked')
-                +caption('Radio Buttons')
-                +ratebutton('raiting1', 4)  
-                +ratebutton('raiting2', 5)  
-            .form-elements__column-gap
-            .form-elements__column
-                +rangeslider
-                +caption('Buttons')
-                +button('CLICK ME')
-                +button('CLICK ME')
-                +button('CLICK ME', 'border')
-                +button('CLICK ME', 'border')
-                +button('CLICK ME', 'text')
-                +button('CLICK ME', 'text')
-                +button('перейти к оплате', 'long')
-                +caption('Pagination')
-                +pagination
-        .form-elements__section
-            .form-elements__column
-                +caption('Bullet list')
-                +bullet_list(['Нельзя с питомцами','Без вечеринок и мероприятий','Время прибытия — после 13:00, а выезд до 12:00']) 
-        .form-elements__section
-            .form-elements__column
-                +icontextlist([['./smile.svg','Комфорт', 'Шумопоглщающие стены'],['./home.svg','Удобство', 'Окно в каждой из спален'],])      
-                +comment({author: 'Мурад Сарафанов', date: '5 дней назад', text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'}) 
 
-                +checkbox_list({
-                    items:
-                        [
-                        {text: 'Можно курить'}, 
-                        {text: 'Можно с питомцами',
-                        checked: 'checked'}, 
-                        {text: 'Можно пригласить гостей (до 10 человек)',
-                        checked: 'checked'}
-                    ]
-                })
+  +logo
 
-                +checkbox_list({
-                    items: [
-                        {desc: 'Широкий коридор', 
-                        sub: 'Ширина коридоров в номере не менее 91 см.'}, 
-                        {desc: 'Помощник для инвалидов', 
-                        sub: 'На 1 этаже вас встретит специалист и проводит до номера.'}
-                    ], 
-                    type:
-                        'rich'
-                })
+  +caption('Text Field')
+  +state('Default')
+  +textfield('Email')
+  +caption('Text Field')
+  +state('Hover / Focus')
+  +textfield('This is pretty awesome', 'true')
+  +caption('Dropdown')
+  +state('Default')
 
-                +checkbox_list({
-                    caption:
-                        'expandable checkbox list',
-                    items: [
-                        {text: 'Завтрак'},
-                        {text: 'Письменный стол',
-                        checked: 'checked'},
-                        {text: 'Стул для кормления',
-                        checked: 'checked'},
-                        {text: 'Кроватка',
-                        checked: 'checked'},
-                        {text: 'Телевизор'},
-                        {text: 'Шампунь'},
-                        {text: 'Телевизор'},
-                        {text: 'Шампунь'}
-                    ], 
-                    type:
-                        'expandable'
-                }) 
-            
+  +dropdown({
+    type: 'test',
+    opened: 'True',
+    items: [
+      {menuItem: 'взрослые', number: '0'},
+      {menuItem: 'дети', number: '2'},
+      {menuItem: 'младенцы', number: '5'}
+    ],
+  })
+
+  +caption('Masced Text Field')
+  +state('Default')
+  +maskedtextfield 
+  +caption('Radio Buttons')
+
+  +radiobuttons
+  +likebutton('2')
+  +likebutton('12', 'checked')
+  +caption('Radio Buttons')
+  +ratebutton('raiting1', 4)  
+  +ratebutton('raiting2', 5)  
+
+  +rangeslider
+  +caption('Buttons')
+  +button('CLICK ME')
+  +button('CLICK ME')
+  +button('CLICK ME', 'border')
+  +button('CLICK ME', 'border')
+  +button('CLICK ME', 'text')
+  +button('CLICK ME', 'text')
+  +button('перейти к оплате', 'long')
+  +caption('Pagination')
+  +pagination
+
+  +caption('Bullet list')
+  +bullet_list(['Нельзя с питомцами','Без вечеринок и мероприятий','Время прибытия — после 13:00, а выезд до 12:00']) 
+
+  +icontextlist([['./smile.svg','Комфорт', 'Шумопоглщающие стены'],['./home.svg','Удобство', 'Окно в каждой из спален'],])      
+  +comment({author: 'Мурад Сарафанов', date: '5 дней назад', text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'}) 
+
+  +checkbox_list({
+  items:
+  [
+  {text: 'Можно курить'}, 
+  {text: 'Можно с питомцами',
+  checked: 'checked'}, 
+  {text: 'Можно пригласить гостей (до 10 человек)',
+  checked: 'checked'}
+  ]
+  })
+
+  +checkbox_list({
+  items: [
+  {desc: 'Широкий коридор', 
+  sub: 'Ширина коридоров в номере не менее 91 см.'}, 
+  {desc: 'Помощник для инвалидов', 
+  sub: 'На 1 этаже вас встретит специалист и проводит до номера.'}
+  ], 
+  type:
+  'rich'
+  })
+
+  +checkbox_list({
+  caption:
+  'expandable checkbox list',
+  items: [
+  {text: 'Завтрак'},
+  {text: 'Письменный стол',
+  checked: 'checked'},
+  {text: 'Стул для кормления',
+  checked: 'checked'},
+  {text: 'Кроватка',
+  checked: 'checked'},
+  {text: 'Телевизор'},
+  {text: 'Шампунь'},
+  {text: 'Телевизор'},
+  {text: 'Шампунь'}
+  ], 
+  type:
+  'expandable'
+  }) 
