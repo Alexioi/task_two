@@ -1,40 +1,90 @@
-const dropdownButtons = document.querySelectorAll(".dropdown__button-visible")
-const dropdownVisible = document.querySelectorAll(".dropdown__visible")
-const dropdownButtonsMinus = document.querySelectorAll(".dropdown__button-minus")
-const dropdownButtonsPlus = document.querySelectorAll(".dropdown__button-plus")
-const dropdownNumbers = document.querySelectorAll(".dropdown__number")
-const dropdownInput = document.querySelectorAll(".dropdown__info")
+const dropdownSwitchDisplayBtns = document.querySelectorAll(".dropdown__switch-display-button")
+const dropdownMenu = document.querySelectorAll(".dropdown__menu")
+const dropdownMinusBtns = setTripleArray(document.querySelectorAll(".dropdown__button-minus"))
+const dropdownPlusBtns = setTripleArray(document.querySelectorAll(".dropdown__button-plus"))
+const dropdownNumbers = setTripleArray(document.querySelectorAll(".dropdown__number"))
+const dropdownInputs = document.querySelectorAll(".dropdown__input")
+const dropdownResetBtns = document.querySelectorAll(".dropdown__reset")
+const dropdownApplyBtns = document.querySelectorAll(".dropdown__apply")
 
-for (let i = 0; i < dropdownButtons.length; i++) {
-  dropdownButtons[i].onclick = function() {
-    if (dropdownVisible[i].style.display == 'block') {
-      dropdownVisible[i].style.display = 'none';
+function setTripleArray(list) {
+  let fullArray = []
+  for (let i = 0; i <list.length; i = i + 3) {    
+    let tripleArray = []
+    for (let j = 0; j <list.length; j++) { 
+      tripleArray.push(list[i + j])
+    }
+    fullArray.push(tripleArray)
+  }
+  return fullArray
+}
+
+function hideDropdownButtonReset(el) {
+  el.classList.toggle('hide')
+}
+
+function sumNumbers(i) {
+  let value = 0
+  for (let j = 0; j < 3; j++) {
+    value = value + Number(dropdownNumbers[i][j].innerText) 
+  }
+  return value
+}
+
+window.onload = function() {
+  for (let i = 0; i < dropdownInputs.length; i++) {
+    let value = sumNumbers(i)
+    if (value == 0) {
+      dropdownInputs[i].value = 'Сколько гостей'
+      hideDropdownButtonReset(dropdownResetBtns[i])
     } else {
-      dropdownVisible[i].style.display = 'block';
+      dropdownInputs[i].value = value + ' гостя'
     }
   }
 }
 
-for (let i = 0; i < dropdownButtonsMinus.length; i++) {
-  dropdownButtonsMinus[i].onclick = function() {
-    let value = dropdownNumbers[i].innerText
-    if (value > 0){
-      dropdownNumbers[i].innerHTML = value - 1
-      value1 = dropdownNumbers[Math.floor(i/3)*3].innerText
-      value2 = dropdownNumbers[Math.floor(i/3)*3 + 1].innerText
-      value3 = dropdownNumbers[Math.floor(i/3)*3 + 2].innerText
-      dropdownInput[Math.floor(i/3)].value = Number(value1) + Number(value2) + Number(value3) + ' гостя'
+for (let i = 0; i < dropdownSwitchDisplayBtns.length; i++) {
+  dropdownSwitchDisplayBtns[i].onclick = function() {
+    hideDropdownButtonReset(dropdownMenu[i])
+  }
+
+  dropdownResetBtns[i].onclick = function() {
+    dropdownInputs[i].value = 'Сколько гостей'
+    for (let j = 0; j < 3; j++) {
+      dropdownNumbers[i][j].innerText = '0'
+    }
+    hideDropdownButtonReset(dropdownResetBtns[i])
+  }
+
+  for (let j = 0; j < 3; j++) {
+    dropdownMinusBtns[i][j].onclick = function() {
+      let value = dropdownNumbers[i][j].innerText
+      if (value > 0){
+        dropdownNumbers[i][j].innerText = value - 1
+        value = sumNumbers(i)
+        if (value == 0) {
+          dropdownInputs[i].value = 'Сколько гостей'
+          hideDropdownButtonReset(dropdownResetBtns[i])
+        } else {
+          dropdownInputs[i].value = value + ' гостя'
+        }
+      }
     }
   }
-}
 
-for (let i = 0; i < dropdownButtonsPlus.length; i++) {
-  dropdownButtonsPlus[i].onclick = function() {
-    let value = dropdownNumbers[i].innerText
-    dropdownNumbers[i].innerHTML = Number(value) + 1
-    value1 = dropdownNumbers[Math.floor(i/3)*3].innerText
-    value2 = dropdownNumbers[Math.floor(i/3)*3 + 1].innerText
-    value3 = dropdownNumbers[Math.floor(i/3)*3 + 2].innerText
-    dropdownInput[Math.floor(i/3)].value = Number(value1) + Number(value2) + Number(value3) + ' гостя'
+  for (let j = 0; j < 3; j++) {
+    dropdownPlusBtns[i][j].onclick = function() {
+      let value = dropdownNumbers[i][j].innerText
+      dropdownNumbers[i][j].innerText = Number(value) + 1
+      value = sumNumbers(i)
+      if (value == 1) {
+        hideDropdownButtonReset(dropdownResetBtns[i])
+      }
+        dropdownInputs[i].value = value + ' гостя'             
+    }
+  }
+
+  dropdownApplyBtns[i].onclick = function() {
+    hideDropdownButtonReset(dropdownMenu[i])
   }
 }
