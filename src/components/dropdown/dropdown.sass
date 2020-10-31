@@ -1,73 +1,99 @@
-.dropdown__input
-  display: flex
-
-.dropdown__list
-  padding: 0px
-  margin: 0px
-  list-style-position: inside
-  list-style-type: none
-
-.dropdown__button-visible
-  height: 44px
-  width: 44px
-  border: 1px solid rgba(31, 32, 65, 0.5)
-  border-left: none
-  background: none
-  &:focus
-    outline: none 
-
-.dropdown__item
-  line-height: 30px
-  display: flex
-  justify-content: space-between
+.dropdown
+  position: relative
 
 .dropdown__info
-  +font-body
-  display: block
-  height: 44px
-  padding-left: 15px
+  display: flex
+  justify-content: space-between
+  background: #FFFFFF
   border: 1px solid rgba(31, 32, 65, 0.5)
-  border-right: none
-  border-radius: 2px 2px 0 0
-  background: #ffffff
+  border-radius: 2px
+  height: 44px
+
+.dropdown__input
+  font-family: Montserrat
+  font-style: normal
+  font-weight: normal
+  font-size: 14px
+  line-height: 18px
+  color: rgba(31, 32, 65, 0.75)
+  width: 100%
+  border: none
+  padding-left: 15px
+
+.dropdown__switch-display-button
+  background: #FFFFFF
+  border: none
+  width: 44px
   &:focus
     outline: none 
 
-.dropdown__visible
-  background: #ffffff
-  +font-h3
-  height: 159px
+.dropdown__menu
+  background: #FFFFFF
   border: 1px solid rgba(31, 32, 65, 0.5)
   border-top: none
-  box-sizing: border-box
-  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05)
-  border-radius: 0 0 2px 2px
-  padding: 13px 7px 0 15px
+  border-radius: 2px
+  position: absolute
+  width: 100%
+  z-index: 10
+  padding: 13px 7px 0 15px 
 
-.dropdown__visible_show 
-  transition: opacity 400ms
+.dropdown__menu_opened
+  display: block 
 
-.dropdown__visible_hide 
-  opacity: 0
-  display: none
+.dropdown__list
+  margin: 0
+  padding: 0
+  list-style-type: none
 
-.dropdown__button-list
-  width: 92px
+.dropdown__item
   display: flex
   justify-content: space-between
+  margin-bottom: 7px
+  
+.dropdown__menu-item
+  font-family: Montserrat
+  font-style: normal
+  font-weight: bold
+  font-size: 12px
+  line-height: 30px
+  text-transform: uppercase
+  color: #1F2041
+
+.dropdown__button-list
+  display: flex
+  justify-content: space-between  
+  align-self: center 
 
 .dropdown__button
-  border: 1px solid rgba(31, 32, 65, 0.25)
-  box-sizing: border-box
-  border-radius: 22px
   width: 30px
   height: 30px
+  border: 1px solid rgba(31, 32, 65, 0.25)
+  border-radius: 22px
+  font-family: Montserrat
+  font-style: normal
+  font-weight: normal
+  font-size: 18px
+  line-height: 30px
   color: rgba(31, 32, 65, 0.5)
   background: #ffffff
 
 .dropdown__number
+  font-family: Montserrat
+  font-style: normal
+  font-weight: bold
+  font-size: 12px
   line-height: 30px
+  text-align: center
+  text-transform: uppercase
+  color: #1F2041
+  width: 32px
+  height: 30px
 
-.dropdown__bot-button
+.dropdown__control-button
   display: flex
   justify-content: space-between
+  margin-top: 19px  
+  margin-bottom: 13px
+
+.hide 
+  display: none
