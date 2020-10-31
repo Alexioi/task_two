@@ -1,20 +1,30 @@
-mixin dropdown
+mixin dropdown(dropdown)
 
-  - var items = ['взрослые','дети','младенцы']
-  - var number = ['0', '2', '5']
-  
+  - if (dropdown.type == 'test') {
+  -   var inputValue = 'Сколько гостей'
+  -   var ControlButton = 'True'
+  - }
+  - if (dropdown.opened) {
+  -   var open = 'dropdown__menu_opened'
+  - }
+
   .dropdown
-    .dropdown__input
-      input.dropdown__info(type="text" value="Сколько гостей" readonly)
-      button.dropdown__button-visible \/
-    .dropdown__visible
+    .dropdown__info
+      input(type="text" value=inputValue readonly).dropdown__input
+      button.dropdown__switch-display-button \/
+    div(class=open).dropdown__menu
       ul.dropdown__list
-        each item, i in items     
-          li.dropdown__item= item 
+        each item in dropdown.items     
+          li.dropdown__item
+            .dropdown__menu-item= item.menuItem
             .dropdown__button-list
               button.dropdown__button.dropdown__button-minus -
-              span.dropdown__number= number[i]
-              button.dropdown__button.dropdown__button-plus +          
-      .dropdown__bot-button
-        +button('очистить', 'text')
-        +button('применить', 'text')
+              span.dropdown__number= item.number
+              button.dropdown__button.dropdown__button-plus +  
+      if ControlButton
+        .dropdown__control-button 
+          .dropdown__reset
+            +button('очистить', 'text')
+          .dropdown__gap
+          .dropdown__apply
+            +button('применить', 'text')
