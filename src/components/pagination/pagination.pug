@@ -1,9 +1,20 @@
 mixin pagination
-    .pagination__nambers
-        .pagination__item.pagination__item_focus 1
-        .pagination__item 2
-        .pagination__item 3
-        .pagination__item ...
-        .pagination__item 15 
-        .pagination__item.pagination__item_next &#8594;
-    .pagination__text 1 – 12 из 100+ вариантов аренды
+
+  - var i = 0
+
+  .pagination
+    .pagination__list
+      button.pagination__item_next next
+      while i < 7
+        - i++
+        button.pagination__item
+      button.pagination__item_next next
+        
+      //- .pagination__item_next
+      //- .pagination__item.pagination__item_target 1
+      //- .pagination__item 2
+      //- .pagination__item 3
+      //- .pagination__item ...
+      //- .pagination__item 15 
+      //- .pagination__item_next &#8594;
+    .pagination__text <span>1 – 12</span> из 100+ вариантов аренды

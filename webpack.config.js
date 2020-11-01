@@ -46,26 +46,26 @@ module.exports = {
     plugins: [
         new MiniCssExtractPlugin(),
         new HtmlWebpackPlugin({
-            template: './src/template/index.pug',
+            template: './src/template/index/index.pug',
             filename: 'index.html'
         }),
         new HtmlWebpackPlugin({
-            template: './src/template/colors_and_type.pug',
+            template: './src/template/colors_and_type/colors_and_type.pug',
             filename: 'colors_and_type.html'
 
         }),
         new HtmlWebpackPlugin({
-            template: './src/template/form_elements.pug',
+            template: './src/template/form_elements/form_elements.pug',
             filename: 'form_elements.html'
 
         }),
         new HtmlWebpackPlugin({
-            template: './src/template/headers_footers.pug',
+            template: './src/template/headers_footers/headers_footers.pug',
             filename: 'headers_footers.html'
 
         }),
         new HtmlWebpackPlugin({
-            template: './src/template/cards.pug',
+            template: './src/template/cards/cards.pug',
             filename: 'cards.html'
 
         }),
