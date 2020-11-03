@@ -30,15 +30,16 @@ function sumNumbers(i) {
   }
   return value
 }
-
-window.onload = function() {
-  for (let i = 0; i < dropdownInputs.length; i++) {
-    let value = sumNumbers(i)
-    if (value == 0) {
-      dropdownInputs[i].value = 'Сколько гостей'
-      hideDropdownButtonReset(dropdownResetBtns[i])
-    } else {
-      dropdownInputs[i].value = value + ' гостя'
+if (dropdownInputs.length > 0) {
+  window.onload = function() {
+    for (let i = 0; i < dropdownInputs.length; i++) {
+      let value = sumNumbers(i)
+      if (value == 0) {
+        dropdownInputs[i].value = 'Сколько гостей'
+        hideDropdownButtonReset(dropdownResetBtns[i])
+      } else {
+        dropdownInputs[i].value = value + ' гостя'
+      }
     }
   }
 }

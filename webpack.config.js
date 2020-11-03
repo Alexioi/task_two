@@ -16,10 +16,9 @@ module.exports = {
             test: /\.pug$/,
             use: 'pug-loader'
         }, {
-            test: /\.(sa|sc|c)ss$/,
-            use: [{
-                    loader: MiniCssExtractPlugin.loader,
-                },
+            test: /\.sass$/,
+            use: [
+                MiniCssExtractPlugin.loader, 
                 'css-loader',
                 'sass-loader',
             ],
@@ -33,7 +32,7 @@ module.exports = {
             use: [{
                 loader: 'file-loader',
                 options: {
-                    name: '[name].[ext]',
+                    name: './img/[name].[ext]',
                 },
             }, ],
         }, ],

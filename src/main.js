@@ -5,6 +5,7 @@ import './main.sass'
 import './components/dropdown/dropdown'
 import './components/checkbox_list/checkbox_list'
 import './components/pagination/pagination'
+import './components/like-button/like-button'
 // import './components/rangeslider/rangeslider'
 // import './components/calendar/calendar'
 

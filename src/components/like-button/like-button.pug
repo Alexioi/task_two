@@ -1,0 +1,9 @@
+
+//- number - число лайков
+//- checked - true/false 
+
+mixin like-button(options)
+  button(class=options.checked ? 'like-button_checked' : '').like-button
+    span.like-button__inner-wrapper
+      span(class=options.checked ? 'like-button__icon_checked' : '').like-button__icon 
+      span(class=options.checked ? 'like-button__counter_checked' : '').like-button__counter= options.number

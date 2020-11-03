@@ -1,3 +1,6 @@
+
+include ../like-button/like-button.pug
+
 mixin comment(comment)
 
   .comment__header
@@ -7,5 +10,5 @@ mixin comment(comment)
       span.comment__date= comment.date
   .comment__content
     .comment__like
-      +likebutton('2')
+      +like-button
     .comment__text= comment.text

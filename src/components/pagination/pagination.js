@@ -41,10 +41,12 @@ function changePaginationArr(target) {
   console.log(paginationArr)
 }
 
-window.onload = function() {
-  for (let i = 0; i < paginationArr.length; i++) { 
-    addClass(paginationList[i], i, 0)
-    addText(paginationList[i], i)
+if (paginationList.length > 0) {
+  window.onload = function() {
+    for (let i = 0; i < paginationArr.length; i++) { 
+      addClass(paginationList[i], i, 0)
+      addText(paginationList[i], i)
+    }
   }
 }
 
