@@ -1,0 +1,10 @@
+include ../caption/caption.pug
+
+mixin text-field(options)
+  .text-field
+    .text-field__header 
+      +caption({header: options.header, legend: options.legend})
+    input.text-field__input(
+      class=options.hover ? 'text-field__input_hovered' : '' 
+      placeholder=options.value wrap='off'
+    )

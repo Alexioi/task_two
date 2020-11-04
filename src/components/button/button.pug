@@ -1,10 +1,16 @@
-mixin button(text, type)
-    if type == 'border'
-        button.button_border
-            div= text
-    else if type == 'text'
-        button.button_text= text
-    else if type == 'long'
-        button.button_long= text
-    else
-        button.button= text
+mixin button(options)
+  if options.type == 'border'
+    button.button-border(
+      class=options.hover ? 'button-border_hovered' : ''
+    )
+      div= options.text
+  else if options.type == 'text'
+    button.button-text(
+      class=options.hover ? 'button-text_hovered' : ''
+    )= options.text
+  else if options.type == 'long'
+    button.button-long= options.text
+  else
+    button.button(
+      class=options.hover ? 'button_hovered' : ''
+    )= options.text
