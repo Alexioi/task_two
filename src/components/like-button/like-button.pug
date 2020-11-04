@@ -3,7 +3,13 @@
 //- checked - true/false 
 
 mixin like-button(options)
-  button(class=options.checked ? 'like-button_checked' : '').like-button
+  button.like-button(
+    class=options.checked ? 'like-button_checked' : ''
+  )
     span.like-button__inner-wrapper
-      span(class=options.checked ? 'like-button__icon_checked' : '').like-button__icon 
-      span(class=options.checked ? 'like-button__counter_checked' : '').like-button__counter= options.number
+      span.like-button__icon(
+        class=options.checked ? 'like-button__icon_checked' : ''
+      )
+      span.like-button__counter(
+        class=options.checked ? 'like-button__counter_checked' : ''
+      )= options.number

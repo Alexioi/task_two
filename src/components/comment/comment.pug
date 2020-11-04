@@ -1,14 +1,19 @@
-
 include ../like-button/like-button.pug
 
-mixin comment(comment)
+//- number - количество лайков
+//- checked - поставлин ли лайк
+//- img - аватар
+//- author - имя автора
+//- date - когда был оставлен коментарий
+//- text - коментарий
 
-  .comment__header
-    img(src="./test.png", alt="").comment__img
-    .wrapper
-      h3.comment__author= comment.author
-      span.comment__date= comment.date
-  .comment__content
-    .comment__like
-      +like-button
-    .comment__text= comment.text
+mixin comment(options)
+  .comment
+    .comment__inner-wrapper
+      img.comment__img(src=options.img, alt='avatar')
+      .comment__like
+        +like-button({number: options.number, checked: options.checked})
+    .comment__content
+      span.comment__author= options.author
+      span.comment__date= options.date
+      p.comment__text= options.text
