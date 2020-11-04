@@ -8,6 +8,7 @@ import './components/comment/comment'
 import './components/caption/caption'
 import './components/text-field/text-field'
 import './components/button/button'
+import './components/login/login'
 
 // import './svg/smile.svg'
 // import './svg/home.svg'

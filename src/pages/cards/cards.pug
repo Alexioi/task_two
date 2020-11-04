@@ -1,22 +1,7 @@
 extends ../main.pug
 
+include ../../components/login/login
 block title
-    title Cards
+  title Cards
 block content
-
-
-
-
-
-
-    //- .fon
-    //-     +logo
-    //-     .row
-    //-         .column
-    //-             +registration              
-    //-         .column
-    //-             +login
-    //-         .column
-    //-             +calendar
-    //-         .column
-    //-             +room_foto
+  +login

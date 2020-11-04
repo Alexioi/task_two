@@ -1,11 +1,14 @@
+include ../text-field/text-field
+include ../../components/button/button
+
 mixin login
-    .login.card
-        h3.login__header Войти
-        .login__picker
-            +textfield('Email')
-            +textfield('Пароль')
-        .login__button
-            +button('Войти', 'long')
-        .login__creat
-            span.login__text Нет аккаунта на Toxin?
-            +button('создать', 'border')
+  .login
+    h3.login__header Войти
+    .login__input-group
+      +text-field({value: 'Email'})
+      +text-field({value: 'Пароль'})
+    .login__button
+      +button({text: 'Войти', type: 'long'})
+    .login__bottom
+      span.login__text Нет аккаунта на Toxin?
+      +button({text: 'создать', type:  'border'})
