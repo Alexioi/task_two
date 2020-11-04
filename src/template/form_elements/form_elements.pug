@@ -2,6 +2,7 @@ extends ../../main.pug
 
 include ../../components/like-button/like-button.pug
 include ../../components/comment/comment
+include ../../components/caption/caption
 
 block title
   title Form elements
@@ -17,6 +18,9 @@ block content
     date: '5 дней назад', 
     text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
   }) 
+
+  +caption({header: 'Text Field', legend: 'Hover / Focus'})
+  +caption({header: 'Text Field'})
 
 
   //- +logo
