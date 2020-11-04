@@ -1,0 +1,23 @@
+.toggle
+
+  &__input
+    display: none
+
+    &:checked + .toggle__icon
+      background-image: url(./img/toggle-on.svg)
+
+  &__icon
+    width: 40px
+    height: 20px
+    background-image: url(./img/toggle-off.svg)
+    margin-right: 10px
+    float: left
+
+  &__text
+    font-family: Montserrat
+    font-style: normal
+    font-weight: normal
+    font-size: 14px
+    line-height: 20px
+    color: rgba(31, 32, 65, 0.75)
+    padding-bottom: 5px
