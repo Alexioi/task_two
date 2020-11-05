@@ -11,6 +11,8 @@ import './components/button/button'
 import './components/login/login'
 import './components/toggle/toggle'
 
+import './pages/form_elements/form-elements'
+
 // import './svg/smile.svg'
 // import './svg/home.svg'
 // import './components/logo/img/full_logo.svg'

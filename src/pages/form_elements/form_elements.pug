@@ -6,41 +6,139 @@ include ../../components/caption/caption
 include ../../components/text-field/text-field
 include ../../components/button/button
 include ../../components/toggle/toggle
+include ../../components/checkbox_list/checkbox_list
 
 block title
   title Form elements
 block content
-  +like-button({number: 2})
-  +like-button({number: 12, checked: 'true'})
-  +comment({
-    img: './img/avatar-murad.png',
-    number: 12,
-    checked: 'true',
-    author: 'Мурад Сарафанов', 
-    date: '5 дней назад', 
-    text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
-  }) 
-  +text-field({
-    header: 'Text Field',
-    legend: 'Default',
-    value: 'Email'
-  })
-  +text-field({
-    header: 'Text Field',
-    legend: 'Hover / Focus',
-    hover: 'true',
-    value: 'This is pretty awesome'
-  })
-  +button({text: 'CLICK ME'})
-  +button({text: 'CLICK ME', hover: 'true'})
-  +button({text: 'CLICK ME', type: 'border'})
-  +button({text: 'CLICK ME', type: 'border', hover: 'true'})
-  +button({text: 'CLICK ME', type: 'text'})
-  +button({text: 'CLICK ME', type: 'text', hover: 'true'})
-  +button({text: 'перейти к оплате', type: 'long'})
-  +toggle({checked: 'true'})
-  +toggle
-  
+
+  .form-elements__row
+
+    .form-elements__col
+      .form-elements__group-1
+        +text-field({
+          header: 'Text Field',
+          legend: 'Default',
+          value: 'Email'
+        })
+        +text-field({
+          header: 'Text Field',
+          legend: 'Hover / Focus',
+          hover: 'true',
+          value: 'This is pretty awesome'
+        })
+
+    .form-elements__gap
+
+    .form-elements__col
+      .form-elements__group-2
+
+        +checkbox_list({
+          items: [
+            {text: 'Можно курить'}, 
+            {text: 'Можно с питомцами',
+            checked: 'checked'}, 
+            {text: 'Можно пригласить гостей (до 10 человек)',
+            checked: 'checked'}
+          ]
+        })
+        +toggle({checked: 'true'})
+        +toggle
+        +like-button({number: 2})
+        +like-button({number: 12, checked: 'true'})
+
+    .form-elements__gap
+
+    .form-elements__col
+      .form-elements__group-3
+        +button({text: 'CLICK ME'})
+        +button({text: 'CLICK ME', hover: 'true'})
+        +button({text: 'CLICK ME', type: 'border'})
+        +button({text: 'CLICK ME', type: 'border', hover: 'true'})
+        +button({text: 'CLICK ME', type: 'text'})
+        +button({text: 'CLICK ME', type: 'text', hover: 'true'})
+        +button({text: 'перейти к оплате', type: 'long'})
+
+  .form-elements__row
+
+    .form-elements__col
+      .form-elements__group-4
+        +checkbox_list({
+          caption: 'expandable checkbox list',
+          items: [
+            {text: 'Завтрак'},
+            {text: 'Письменный стол',
+            checked: 'checked'},
+            {text: 'Стул для кормления',
+            checked: 'checked'},
+            {text: 'Кроватка',
+            checked: 'checked'},
+            {text: 'Телевизор'},
+            {text: 'Шампунь'},
+            {text: 'Телевизор'},
+            {text: 'Шампунь'}
+          ], 
+          type: 'expandable'
+        }) 
+        +checkbox_list({
+          caption: 'expandable checkbox list',
+          items: [
+            {text: 'Завтрак'},
+            {text: 'Письменный стол',
+            checked: 'checked'},
+            {text: 'Стул для кормления',
+            checked: 'checked'},
+            {text: 'Кроватка',
+            checked: 'checked'},
+            {text: 'Телевизор'},
+            {text: 'Шампунь'},
+            {text: 'Телевизор'},
+            {text: 'Шампунь'}
+          ], 
+          type: 'expandable'
+        }) 
+
+    .form-elements__gap
+
+    .form-elements__col
+      .form-elements__group-5
+        +checkbox_list({
+          items: [
+            {desc: 'Широкий коридор', 
+            sub: 'Ширина коридоров в номере не менее 91 см.'}, 
+            {desc: 'Помощник для инвалидов', 
+            sub: 'На 1 этаже вас встретит специалист и проводит до номера.'}
+          ], 
+          type: 'rich'
+        })
+
+    .form-elements__gap
+
+    .form-elements__col
+      .form-elements__group-6
+
+  .form-elements__row
+
+    .form-elements__col
+      .form-elements__group-7
+
+    .form-elements__gap
+
+    .form-elements__group-8
+      +comment({
+        img: './img/avatar-murad.png',
+        number: 12,
+        checked: 'true',
+        author: 'Мурад Сарафанов', 
+        date: '5 дней назад', 
+        text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
+      }) 
+
+
+
+
+
+
 
 
 
@@ -97,45 +195,3 @@ block content
   //- +bullet_list(['Нельзя с питомцами','Без вечеринок и мероприятий','Время прибытия — после 13:00, а выезд до 12:00']) 
 
   //- +icontextlist([['./smile.svg','Комфорт', 'Шумопоглщающие стены'],['./home.svg','Удобство', 'Окно в каждой из спален'],])      
-
-  //- +checkbox_list({
-  //- items:
-  //- [
-  //- {text: 'Можно курить'}, 
-  //- {text: 'Можно с питомцами',
-  //- checked: 'checked'}, 
-  //- {text: 'Можно пригласить гостей (до 10 человек)',
-  //- checked: 'checked'}
-  //- ]
-  //- })
-
-  //- +checkbox_list({
-  //- items: [
-  //- {desc: 'Широкий коридор', 
-  //- sub: 'Ширина коридоров в номере не менее 91 см.'}, 
-  //- {desc: 'Помощник для инвалидов', 
-  //- sub: 'На 1 этаже вас встретит специалист и проводит до номера.'}
-  //- ], 
-  //- type:
-  //- 'rich'
-  //- })
-
-  //- +checkbox_list({
-  //- caption:
-  //- 'expandable checkbox list',
-  //- items: [
-  //- {text: 'Завтрак'},
-  //- {text: 'Письменный стол',
-  //- checked: 'checked'},
-  //- {text: 'Стул для кормления',
-  //- checked: 'checked'},
-  //- {text: 'Кроватка',
-  //- checked: 'checked'},
-  //- {text: 'Телевизор'},
-  //- {text: 'Шампунь'},
-  //- {text: 'Телевизор'},
-  //- {text: 'Шампунь'}
-  //- ], 
-  //- type:
-  //- 'expandable'
-  //- }) 
