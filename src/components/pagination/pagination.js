@@ -1,86 +1,62 @@
-const paginationList = document.querySelectorAll('.pagination__item')
-let paginationArr = [1, 2, 3, '...', 15]
+import "./pagination.sass";
 
-function addClass(el, i, target) {
-  if (i == target) {
-    el.className = 'pagination__item_target'
-  }
-  // } else {
-  //   el.classList.toggle('hide')
-  // } 
-}
+const paginationList = document.querySelectorAll(".pagination__item");
 
-function setPaginationArr() {
+let spanl = document.createElement("span");
+spanl.className = "pagination__dots";
+spanl.innerHTML = "...";
 
-}
+let spanr = document.createElement("span");
+spanr.className = "pagination__dots";
+spanr.innerHTML = "...";
 
-function addText(el, i) {
-  el.innerHTML = paginationArr[i]
-}
-
-function changePaginationArr(target) {
-  paginationArr = [1]
-  for (let i = -2; i < 3; i++) {
-    let item = Number(target) + i
-    if (1 < item) {
-      paginationArr.push(item)
+function hidePaginationItems(target) {
+  let itemsVisible = [];
+  for (let i = 2; i < paginationList.length; i++) {
+    if (
+      i != target &&
+      i != target - 1 &&
+      i != target - 2 &&
+      i != Number(target) + 1 &&
+      i != Number(target) + 2
+    ) {
+      itemsVisible.push(i);
     }
   }
-  paginationArr.push()
-  // if (target == '1') {
-  //   paginationArr = ['1', '2', '3', '...', '15']
-  // } else if (target == '2') {
-  //   paginationArr = ['1', '2', '3', '4', '...', '15']
-  // } else if (target == '3') {
-  //   paginationArr = ['1', '2', '3', '4', '5', '...', '15']
-  // } else if (target == '3') {
-  //   paginationArr = ['...', '2', '3', '4', '5', '6', '...', '15']
-  // } else if (target == '3') {
-  //   paginationArr = ['...', '2', '3', '4', '5', '6', '...', '15']
-  // }
-  console.log(paginationArr)
+
+  if (itemsVisible[itemsVisible.length - 1] == 14) {
+    paginationList[paginationList.length - 1].before(spanr);
+  } else {
+    spanr.remove();
+  }
+
+  if (itemsVisible[0] == 2) {
+    paginationList[0].after(spanl);
+  } else {
+    spanl.remove();
+  }
+
+  for (let i = 0; i < paginationList.length; i++) {
+    paginationList[i].classList.remove("pagination__item_hiden");
+  }
+
+  for (let j of itemsVisible) {
+    paginationList[j - 1].classList.toggle("pagination__item_hiden");
+  }
+  console.log(itemsVisible);
 }
 
 if (paginationList.length > 0) {
-  window.onload = function() {
-    for (let i = 0; i < paginationArr.length; i++) { 
-      addClass(paginationList[i], i, 0)
-      addText(paginationList[i], i)
-    }
-  }
+  console.log(paginationList.length);
+  window.onload = function () {
+    let target = paginationList[0].innerText;
+    hidePaginationItems(target);
+  };
 }
 
-for (let i = 0; i < paginationList.length; i++) { 
-  paginationList[i].onclick = function() {
-    target = paginationList[i].innerHTML
-    changePaginationArr(target)
-    for (let i = 0; i < paginationArr.length; i++) { 
-      addClass(paginationList[i], i, target - 1)
-      addText(paginationList[i], i)
-    }
-
-  }
+for (let i = 0; i < paginationList.length; i++) {
+  paginationList[i].onclick = function () {
+    let target = paginationList[i].innerText;
+    hidePaginationItems(target);
+  };
 }
-// let paginationArr = createPaginationArr(15)
-
-// function createPaginationArr(maxNamber) {
-//   let arr = []
-//   for (let i = 1; i < maxNamber + 1; i++) { 
-//     arr.push(i)
-//   }
-//   return arr
-// }
-
-// function test() {
-//   for (let i = 0; i < paginationArr[paginationArr.length-1]; i++) { 
-//     let paginationItem = document.createElement('div')
-//     paginationItem.className = 'pagination__item'
-//     paginationItem.innerHTML = i + 1
-//     paginationList.append(paginationItem)
-//   }
-// }
-
-// window.onload = function() {
-//   test()
-// }
-

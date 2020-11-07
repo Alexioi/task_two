@@ -12,5 +12,6 @@ import "./components/login/login";
 import "./components/toggle/toggle";
 import "./components/radio-buttons/radio-buttons";
 import "./components/registration/registration";
+import "./components/pagination/pagination";
 
 import "./pages/form_elements/form-elements";
