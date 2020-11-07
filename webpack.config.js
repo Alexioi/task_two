@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -24,10 +25,14 @@ module.exports = {
             ],
         }, {
             test: /\.(woff|woff2|eot|ttf|otf)$/,
-            use: [
-                'file-loader',
-            ],
-        }, {
+            use: [{
+                loader: 'file-loader',
+                options: {
+                    name: './font/[name].[ext]',
+                },
+            }],
+        }, 
+        {
             test: /\.(png|jpe?g|gif|svg|ico)$/i,
             use: [{
                 loader: 'file-loader',
@@ -35,7 +40,8 @@ module.exports = {
                     name: './img/[name].[ext]',
                 },
             }, ],
-        }, ],
+        }, 
+        ],
     },
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
@@ -43,6 +49,20 @@ module.exports = {
         port: 9001
     },
     plugins: [
+        new CopyPlugin({
+            patterns: [
+                {
+                    from: 'src/**/*.png',
+                    to: 'img',
+                    flatten: true, 
+                },
+                {
+                    from: 'src/**/*.svg',
+                    to: 'img',
+                    flatten: true, 
+                },
+            ],
+        }),
         new MiniCssExtractPlugin(),
         new HtmlWebpackPlugin({
             template: './src/pages/index/index.pug',

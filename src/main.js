@@ -13,12 +13,3 @@ import './components/toggle/toggle'
 
 import './pages/form_elements/form-elements'
 
-// import './svg/smile.svg'
-// import './svg/home.svg'
-// import './components/logo/img/full_logo.svg'
-// import  './components/logo/img/logo.svg'
-// import './components/footer/img/twitter.svg'
-// import './components/footer/img/facebook.svg'
-// import './components/footer/img/instagram.svg'
-import './img/favicon.png'
-import './components/comment/img/avatar-murad.png'
