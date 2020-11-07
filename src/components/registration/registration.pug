@@ -1,0 +1,25 @@
+mixin registration
+  .registration
+    h3.registration__header Регистрация аккаунта
+    .registration__input-group-name
+      .registration__input-name
+        +text-field({value: 'Имя'})
+      +text-field({value: 'Фамилия'})
+    .registration__radio-buttons
+      +radio-buttons
+    .registration__input-data
+      +text-field({header: 'Дата рождения', value: 'ДД.ММ.ГГГГ'})
+    .registration__input-group-login
+      .registration__input-email
+        +text-field({
+          header: 'Данные для входа в сервис', 
+          value: 'Email'
+        })
+      +text-field({value: 'Пароль'})
+    .registration__toggle
+      +toggle
+    .registration__button
+      +button({text: 'перейти к оплате', type: 'long'})
+    .registration__login
+      span.registration__text Уже есть аккаунт на Toxin?
+      +button({text: 'войти', type: 'border'})
