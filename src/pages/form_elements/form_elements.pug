@@ -9,6 +9,7 @@ include ../../components/toggle/toggle
 include ../../components/checkbox_list/checkbox_list
 include ../../components/radio-buttons/radio-buttons
 include ../../components/pagination/pagination
+include ../../components/icon-text-list/icon-text-list
 
 block title
   title Form elements
@@ -125,18 +126,32 @@ block content
 
     .form-elements__col
       .form-elements__group-7
+        +icon-text-list({
+          items:
+            [{
+              imgName: 'smile',
+              header: 'Комфорт', 
+              subText: 'Шумопоглщающие стены'
+            },
+            {
+              imgName: 'home',
+              header: 'Удобство', 
+              subText: 'Окно в каждой из спален'
+            }]
+        })
 
     .form-elements__gap
 
-    .form-elements__group-8
-      +comment({
-        img: './img/avatar-murad.png',
-        number: 12,
-        checked: 'true',
-        author: 'Мурад Сарафанов', 
-        date: '5 дней назад', 
-        text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
-      }) 
+    .form-elements__col
+      .form-elements__group-8
+        +comment({
+          img: './img/avatar-murad.png',
+          number: 12,
+          checked: 'true',
+          author: 'Мурад Сарафанов', 
+          date: '5 дней назад', 
+          text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
+        }) 
 
 
 
@@ -152,15 +167,6 @@ block content
 
   //- +logo
 
-  //- +caption('Text Field')
-  //- +state('Default')
-  //- +textfield('Email')
-  //- +caption('Text Field')
-  //- +state('Hover / Focus')
-  //- +textfield('This is pretty awesome', 'true')
-  //- +caption('Dropdown')
-  //- +state('Default')
-
   //- +dropdown({
   //-   type: 'test',
   //-   opened: 'True',
@@ -171,31 +177,7 @@ block content
   //-   ],
   //- })
 
-  //- +caption('Masced Text Field')
-  //- +state('Default')
-  //- +maskedtextfield 
-  //- +caption('Radio Buttons')
-
-  //- +radiobuttons
-  //- +likebutton('2')
-  //- +like-button
-  //- +caption('Radio Buttons')
   //- +ratebutton('raiting1', 4)  
   //- +ratebutton('raiting2', 5)  
 
-  //- +rangeslider
-  //- +caption('Buttons')
-  //- +button('CLICK ME')
-  //- +button('CLICK ME')
-  //- +button('CLICK ME', 'border')
-  //- +button('CLICK ME', 'border')
-  //- +button('CLICK ME', 'text')
-  //- +button('CLICK ME', 'text')
-  //- +button('перейти к оплате', 'long')
-  //- +caption('Pagination')
-  //- +pagination
-
-  //- +caption('Bullet list')
   //- +bullet_list(['Нельзя с питомцами','Без вечеринок и мероприятий','Время прибытия — после 13:00, а выезд до 12:00']) 
-
-  //- +icontextlist([['./smile.svg','Комфорт', 'Шумопоглщающие стены'],['./home.svg','Удобство', 'Окно в каждой из спален'],])      

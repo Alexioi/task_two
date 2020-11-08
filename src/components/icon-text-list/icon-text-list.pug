@@ -1,0 +1,10 @@
+mixin icon-text-list(options)
+  .icon-text-list
+    each item in options.items
+      .icon-text-list__item
+        -
+          var imgSrc = './img/icon-text-list__' + item.imgName + '.svg'
+        img(src= imgSrc).icon-text-list__img
+        .icon-text-list__text
+          h3.icon-text-list__header= item.header
+          span.icon-text-list__sub-text= item.subText
