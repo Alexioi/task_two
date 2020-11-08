@@ -14,5 +14,6 @@ import "./components/radio-buttons/radio-buttons";
 import "./components/registration/registration";
 import "./components/pagination/pagination";
 import "./components/icon-text-list/icon-text-list";
+import "./components/bullet-list/bullet-list";
 
 import "./pages/form_elements/form-elements";

@@ -10,6 +10,7 @@ include ../../components/checkbox_list/checkbox_list
 include ../../components/radio-buttons/radio-buttons
 include ../../components/pagination/pagination
 include ../../components/icon-text-list/icon-text-list
+include ../../components/bullet-list/bullet-list
 
 block title
   title Form elements
@@ -121,6 +122,14 @@ block content
 
     .form-elements__col
       .form-elements__group-6
+        +bullet-list({
+          items:
+            [
+              'Нельзя с питомцами',
+              'Без вечеринок и мероприятий',
+              'Время прибытия — после 13:00, а выезд до 12:00'
+            ]
+        }) 
 
   .form-elements__row
 
@@ -180,4 +189,4 @@ block content
   //- +ratebutton('raiting1', 4)  
   //- +ratebutton('raiting2', 5)  
 
-  //- +bullet_list(['Нельзя с питомцами','Без вечеринок и мероприятий','Время прибытия — после 13:00, а выезд до 12:00']) 
+
