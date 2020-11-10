@@ -1,10 +1,19 @@
-include ../caption/caption.pug
+include ../caption/caption
 
 mixin text-field(options)
-  .text-field
-    .text-field__header 
+  label.text-field
+    .text-field__input-header
       +caption({header: options.header, legend: options.legend})
-    input.text-field__input(
-      class=options.hover ? 'text-field__input_hovered' : '' 
-      placeholder=options.value wrap='off'
-    )
+    .text-field__input-wrapper
+      echo 
+        input.text-field__input(
+          class= options.hover ? 'text-field__input_hovered' : ''
+          placeholder= options.value
+          wrap= 'off'
+        )
+      if options.type == 'dropdown'  
+        button.text-field__btn
+          .text-field__btn-img-open
+      else if options.type == 'subscription'
+        button.text-field__btn
+          .text-field__btn-img-send

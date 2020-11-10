@@ -15,5 +15,9 @@ import "./components/registration/registration";
 import "./components/pagination/pagination";
 import "./components/icon-text-list/icon-text-list";
 import "./components/bullet-list/bullet-list";
+import "./components/dropdown/dropdown";
+import "./components/room-card/room-card";
+import "./components/palette/palette";
 
 import "./pages/form_elements/form-elements";
+import "./pages/colors-and-type/colors-and-type";

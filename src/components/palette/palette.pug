@@ -1,18 +1,19 @@
 mixin palette
 
-    - var palettes = [
-    -    { header: 'Dark Shade 100%', color: '#1F2041', classColor: 'palette__color-dark-main' },
-    -    { header: 'Dark Shade 75%', color: '#1F2041', classColor: 'palette__color-dark-main-75' },
-    -    { header: 'Dark Shade 50%', color: '#1F2041', classColor: 'palette__color-dark-main-50' },
-    -    { header: 'Dark Shade 25%', color: '#1F2041', classColor: 'palette__color-dark-main-25' },
-    -    { header: 'Dark Shade 5%', color: '#1F2041', classColor: 'palette__color-dark-main-5' },
-    -    { header: 'Purpe', color: '#BC9CFF', classColor: 'palette__color-primary' },
-    -    { header: 'Green', color: '#6FCF97', classColor: 'palette__color-secondary' }
-    - ]
+  - var items = [
+  -   { header: 'Dark Shade 100%', text: '#1F2041', color: 'main' },
+  -   { header: 'Dark Shade 75%', text: '#1F2041', color: 'main-75' },
+  -   { header: 'Dark Shade 50%', text: '#1F2041', color: 'main-50' },
+  -   { header: 'Dark Shade 25%', text: '#1F2041', color: 'main-25' },
+  -   { header: 'Dark Shade 5%', text: '#1F2041', color: 'main-5' },
+  -   { header: 'Purpe', text: '#BC9CFF', color: 'primary' },
+  -   { header: 'Green', text: '#6FCF97', color: 'secondary' } 
+  - ]
 
-    each palette in palettes
-        .palette
-            div(class= palette.classColor).palette__color
-            .palette__text
-                h3= palette.header 
-                span= palette.color
+  .palette
+    each item in items
+      .palette__item
+        div(class= 'palette__color-' + item.color).palette__color
+        .palette__text
+          h2.palette__color-name= item.header 
+          span.palette__color-hex= item.text

@@ -11,6 +11,7 @@ include ../../components/radio-buttons/radio-buttons
 include ../../components/pagination/pagination
 include ../../components/icon-text-list/icon-text-list
 include ../../components/bullet-list/bullet-list
+include ../../components/dropdown/dropdown
 
 block title
   title Form elements
@@ -30,6 +31,13 @@ block content
           legend: 'Hover / Focus',
           hover: 'true',
           value: 'This is pretty awesome'
+        })
+        +text-field({
+          header: 'Text Field',
+          legend: 'Hover / Focus',
+          hover: 'true',
+          value: 'This is pretty awesome',
+          type: 'dropdown'
         })
 
     .form-elements__gap
@@ -64,6 +72,57 @@ block content
         +button({text: 'CLICK ME', type: 'text', hover: 'true'})
         +button({text: 'перейти к оплате', type: 'long'})
         +pagination
+
+  .form-elements__row
+
+    .form-elements__col
+      .form-elements__group-1
+        +dropdown({
+          type: 'test',
+          opened: 'True',
+          items: [
+            {menuItem: 'взрослые', number: '0'},
+            {menuItem: 'дети', number: '2'},
+            {menuItem: 'младенцы', number: '5'}
+          ],
+        })
+        +dropdown({
+          type: 'test',
+          opened: 'True',
+          items: [
+            {menuItem: 'взрослые', number: '0'},
+            {menuItem: 'дети', number: '2'},
+            {menuItem: 'младенцы', number: '5'}
+          ],
+        })
+
+    .form-elements__gap
+
+    .form-elements__col
+      .form-elements__group-2
+        +dropdown({
+          type: 'test',
+          opened: 'True',
+          items: [
+            {menuItem: 'взрослые', number: '0'},
+            {menuItem: 'дети', number: '2'},
+            {menuItem: 'младенцы', number: '5'}
+          ],
+        })
+
+    .form-elements__gap
+
+    .form-elements__col
+      .form-elements__group-3
+        +dropdown({
+          type: 'test',
+          opened: 'True',
+          items: [
+            {menuItem: 'взрослые', number: '0'},
+            {menuItem: 'дети', number: '2'},
+            {menuItem: 'младенцы', number: '5'}
+          ],
+        })
 
   .form-elements__row
 
@@ -176,15 +235,7 @@ block content
 
   //- +logo
 
-  //- +dropdown({
-  //-   type: 'test',
-  //-   opened: 'True',
-  //-   items: [
-  //-     {menuItem: 'взрослые', number: '0'},
-  //-     {menuItem: 'дети', number: '2'},
-  //-     {menuItem: 'младенцы', number: '5'}
-  //-   ],
-  //- })
+
 
   //- +ratebutton('raiting1', 4)  
   //- +ratebutton('raiting2', 5)  
