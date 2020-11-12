@@ -1,5 +1,7 @@
 import "./main.sass";
 
+import 'jquery-mask-plugin'
+
 import "./components/dropdown/dropdown";
 import "./components/checkbox_list/checkbox_list";
 import "./components/pagination/pagination";
