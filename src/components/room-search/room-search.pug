@@ -1,0 +1,20 @@
+include ../../components/date-dropdown/date-dropdown
+include ../../components/dropdown/dropdown
+include ../../components/button/button
+
+mixin room-search
+  .room-search
+    h3.room-search__header Найдём номера под ваши пожелания
+    .room-search__date-dropdown
+      +date-dropdown({leftHeader: 'прибытие', rightHeader: 'выезд'})
+    .room-search__dropdown
+      +dropdown({
+        type: 'test',
+        opened: 'True',
+        items: [
+          {menuItem: 'взрослые', number: '0'},
+          {menuItem: 'дети', number: '2'},
+          {menuItem: 'младенцы', number: '5'}
+        ],
+      })
+    +button({text: 'подобрать номер', type: 'long'})

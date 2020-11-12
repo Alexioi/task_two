@@ -3,10 +3,18 @@ extends ../main.pug
 include ../../components/login/login
 include ../../components/registration/registration
 include ../../components/room-card/room-card 
+include ../../components/room-search/room-search
 
 block title
   title Cards
 block content
-  +login
-  +registration
-  +room-card 
+  .cards
+    .cards__container
+      .cards__col
+        .cards__item
+          +room-search
+        +registration
+      .cards__col
+        +login
+      .cards__col
+        +room-card 
