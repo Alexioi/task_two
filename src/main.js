@@ -18,6 +18,8 @@ import "./components/bullet-list/bullet-list";
 import "./components/dropdown/dropdown";
 import "./components/room-card/room-card";
 import "./components/palette/palette";
+import "./components/subscription-text-field/subscription-text-field";
+import "./components/date-dropdown/date-dropdown";
 
 import "./pages/form_elements/form-elements";
 import "./pages/colors-and-type/colors-and-type";
