@@ -1,11 +1,17 @@
 include ../caption/caption
 
 mixin text-field(options)
+
+  - var inputClass = ''
+  - inputClass += options.hover ? ' text-field__input_hovered' : ''
+  - inputClass += options.masked ? ' js-text-field__input_masked' : ''
+
   label.text-field
-    .text-field__input-header
-      +caption({header: options.header, legend: options.legend})
+    if options.header 
+      .text-field__input-header
+        +caption({header: options.header, legend: options.legend})
     input.text-field__input(
-      class= options.hover ? 'text-field__input_hovered' : ''
+      class= inputClass
       placeholder= options.value
       wrap= 'off'
     )

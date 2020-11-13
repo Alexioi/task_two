@@ -1,6 +1,7 @@
 import "./main.sass";
 
 import 'jquery-mask-plugin'
+import 'air-datepicker'
 
 import "./components/dropdown/dropdown";
 import "./components/checkbox_list/checkbox_list";
@@ -23,6 +24,7 @@ import "./components/palette/palette";
 import "./components/subscription-text-field/subscription-text-field";
 import "./components/date-dropdown/date-dropdown";
 import "./components/room-search/room-search";
+import './components/calendar/calendar'
 
 import "./pages/form_elements/form-elements";
 import "./pages/colors-and-type/colors-and-type";

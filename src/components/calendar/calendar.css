@@ -1,0 +1,94 @@
+.datepicker
+, *[vp-input]
+, .datepicker--nav-title
+, .datepicker--nav-action
+, .datepicker--cell{
+	border-radius:initial;
+}
+
+.datepicker
+, *[vp-input]
+, *[vp-button]{
+	border-width:1px;
+	border-style:solid;
+}
+
+.datepicker{
+	width:200px;
+}
+
+.datepicker--cells-years
+, .datepicker--cells-months{
+    height:120px;
+}
+
+.datepicker--nav{
+    padding:0;
+}
+
+.datepicker--nav svg{
+    box-shadow:none;
+}
+
+.datepicker--custom{
+	border-width:1px;
+	border-style:solid none none;
+	text-align:center;
+	padding:4px;
+}
+
+*[vp-input]
+, *[vp-button]{
+	padding:2px 1ex;
+}
+
+*[vp-button]
+, .datepicker--nav-title
+, .datepicker--cell{
+    font-size:13px;
+}
+
+*[vp-button]{
+	cursor:pointer;
+}
+
+/**** air-datepicker dark skin */
+body
+, .datepicker
+, .datepicker--pointer
+, *[vp-input]
+, *[vp-button]{
+	background:#273137;
+}
+
+.datepicker--cell.-selected-
+, .datepicker--cell.-selected-.-current-{
+	color:#000;
+}
+
+*[vp-input]
+, *[vp-button]
+, *[vp-button = selected]:hover
+, .datepicker
+, .datepicker--cell.-focus-
+, .datepicker--cell.-focus-.-current-
+, .datepicker--nav-title:hover
+, .datepicker--nav-title.-disabled-:hover{
+	color:#fff;
+}
+
+.datepicker--cell.-focus-
+, .datepicker--nav-title:hover
+, .datepicker--nav-action:hover svg{
+  background:#3baae3;
+}
+
+.-disabled-.datepicker--cell-year.-other-decade-
+, .-disabled-.-focus-.datepicker--cell-year.-other-decade-{
+	color:#aeaeae;
+}
+
+*[vp-button = selected]{
+	background:#3baae3;
+	color:black;
+}
