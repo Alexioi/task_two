@@ -14,6 +14,7 @@ include ../../components/bullet-list/bullet-list
 include ../../components/dropdown/dropdown
 include ../../components/subscription-text-field/subscription-text-field
 include ../../components/date-dropdown/date-dropdown
+include ../../components/expandable-checkbox-list/expandable-checkbox-list
 
 block title
   title Form elements
@@ -131,8 +132,7 @@ block content
 
     .form-elements__col
       .form-elements__group-4
-        +checkbox_list({
-          caption: 'expandable checkbox list',
+        +expandable-checkbox-list({
           items: [
             {text: 'Завтрак'},
             {text: 'Письменный стол',
@@ -145,11 +145,10 @@ block content
             {text: 'Шампунь'},
             {text: 'Телевизор'},
             {text: 'Шампунь'}
-          ], 
-          type: 'expandable'
-        }) 
-        +checkbox_list({
-          caption: 'expandable checkbox list',
+          ],
+        })
+        +expandable-checkbox-list({
+          open: true,
           items: [
             {text: 'Завтрак'},
             {text: 'Письменный стол',
@@ -162,9 +161,8 @@ block content
             {text: 'Шампунь'},
             {text: 'Телевизор'},
             {text: 'Шампунь'}
-          ], 
-          type: 'expandable'
-        }) 
+          ],
+        })
 
     .form-elements__gap
 

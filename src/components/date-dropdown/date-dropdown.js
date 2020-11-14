@@ -1,4 +1,5 @@
 import "./date-dropdown.sass";
+import './datapicker.sass'
 
 // $(".js-date-dropdown__input").mask(
 //   "ДД.ММ.ГГГГ", 
@@ -10,4 +11,4 @@ import "./date-dropdown.sass";
 //   }
 // );
 
-// $('.js-date-dropdown__btn').data('datepicker')
+$(".js-date-dropdown__input").datepicker();

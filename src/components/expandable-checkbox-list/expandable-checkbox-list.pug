@@ -1,0 +1,17 @@
+mixin expandable-checkbox-list(options)
+
+  - var buttonText = options.open ? 'close' : 'open' 
+  - var listClass = options.open ? '' : 'js-expandable-checkbox-list__items_hidden'
+  - var buttonClass = options.open ? 'js-expandable-checkbox-list__button_close' : ''
+
+  .expandable-checkbox-list
+    .expandable-checkbox-list__header
+      +caption({header: 'expandable checkbox list'})
+      button(class=buttonClass).expandable-checkbox-list__button.js-expandable-checkbox-list__button= buttonText
+    ul(class=listClass).expandable-checkbox-list__items.js-expandable-checkbox-list__items
+      each item in options.items
+        li.expandable-checkbox-list__item
+          label.expandable-checkbox-list__label
+            input.expandable-checkbox-list__input(type="checkbox" checked=item.checked)
+            span.expandable-checkbox-list__text= item.text
+    

@@ -1,7 +1,7 @@
 mixin checkbox_list(checkboxList)
   if checkboxList.type == 'expandable'
     .checkbox_list__header
-      +caption(checkboxList.caption)
+      +caption({header: checkboxList.caption})
       .checkbox_list__btn.checkbox-list__btn__hide
     div(class='checkbox_list__visible')
       each item in checkboxList.items

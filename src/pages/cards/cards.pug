@@ -5,6 +5,7 @@ include ../../components/registration/registration
 include ../../components/room-card/room-card 
 include ../../components/room-search/room-search
 include ../../components/calendar/calendar
+include ../../components/booking-card/booking-card
 
 block title
   title Cards
@@ -16,7 +17,10 @@ block content
           +room-search
         +registration
       .cards__col
+        .cards__item
+          +booking-card
         +login
       .cards__col
-        +calendar
+        .cards__item
+          +calendar
         +room-card 

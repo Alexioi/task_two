@@ -92,7 +92,7 @@ module.exports = {
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery",
-      mask: 'jquery-mask-plugin',
+      mask: "jquery-mask-plugin",
     }),
   ],
 };
