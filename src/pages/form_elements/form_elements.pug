@@ -81,37 +81,24 @@ block content
 
     .form-elements__col
       .form-elements__group-1
-        +dropdown({
-          type: 'test',
-          opened: 'True',
-          items: [
-            {menuItem: 'взрослые', number: '0'},
-            {menuItem: 'дети', number: '2'},
-            {menuItem: 'младенцы', number: '5'}
-          ],
-        })
-        +dropdown({
-          type: 'test',
-          opened: 'True',
-          items: [
-            {menuItem: 'взрослые', number: '0'},
-            {menuItem: 'дети', number: '2'},
-            {menuItem: 'младенцы', number: '5'}
-          ],
-        })
+        //- +dropdown({
+        //-   type: 'guests',
+        //-   opened: 'True',
+          
+        //- })
+        //- +dropdown({
+        //-   type: 'guests',
+        //-   opened: 'True'
+        //- })
 
     .form-elements__gap
 
     .form-elements__col
       .form-elements__group-2
         +dropdown({
-          type: 'test',
+          type: 'guests',
           opened: 'True',
-          items: [
-            {menuItem: 'взрослые', number: '0'},
-            {menuItem: 'дети', number: '2'},
-            {menuItem: 'младенцы', number: '5'}
-          ],
+          number: [0, 2, 5]
         })
 
     .form-elements__gap
@@ -119,13 +106,7 @@ block content
     .form-elements__col
       .form-elements__group-3
         +dropdown({
-          type: 'test',
-          opened: 'True',
-          items: [
-            {menuItem: 'взрослые', number: '0'},
-            {menuItem: 'дети', number: '2'},
-            {menuItem: 'младенцы', number: '5'}
-          ],
+          type: 'conveniences'  
         })
 
   .form-elements__row

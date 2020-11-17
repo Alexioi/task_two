@@ -1,22 +1,39 @@
 include ../button/button
 
-mixin dropdown(dropdown)
+mixin dropdown(options)
 
-  - if (dropdown.type == 'test') {
+  - if (options.type == 'guests') {
   -   var inputValue = 'Сколько гостей'
-  -   var ControlButton = 'True'
+  -   var ControlButton = true
+  -   var items = [
+  -         {menuItem: 'взрослые', number: '0'},
+  -         {menuItem: 'дети', number: '0'},
+  -         {menuItem: 'младенцы', number: '0'}
+  -       ]
+  - } else if (options.type == 'conveniences') {  
+  -   var inputValue = 'Удобства'
+  -   var ControlButton = false
+  -   var items = [
+  -         {menuItem: 'спальни', number: '0'},
+  -         {menuItem: 'кровати', number: '0'},
+  -         {menuItem: 'ванные комнаты', number: '0'}
+  -       ]
   - }
-  - if (dropdown.opened) {
-  -   var open = 'dropdown__menu_opened'
+  - var classOpen = options.opened ? '' : 'dropdown__menu_opened'
+  - if (options.number) {
+  -  for (var i = 0; i < options.number.length; i++) {
+  -     items[i].number = options.number[i]
+  -  }
   - }
 
   .dropdown
-    .dropdown__info
+    +caption({header: 'test'})
+    .dropdown__input-wrapper
       input(type="text" value=inputValue readonly).dropdown__input
-      button.dropdown__switch-display-button \/
-    div(class=open).dropdown__menu
+      button.dropdown__switch-display-button switch
+    div(class=classOpen).dropdown__menu
       ul.dropdown__list
-        each item in dropdown.items     
+        each item in items     
           li.dropdown__item
             .dropdown__menu-item= item.menuItem
             .dropdown__button-list
@@ -26,7 +43,6 @@ mixin dropdown(dropdown)
       if ControlButton
         .dropdown__control-button 
           .dropdown__reset
-            +button({text: 'очистить', type: 'text'})
-          .dropdown__gap
+            +button({text: 'очистить', type: 'text'})      
           .dropdown__apply
             +button({text: 'применить', type: 'text'})
