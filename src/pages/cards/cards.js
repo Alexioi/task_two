@@ -1,1 +1,1 @@
-import './cards.sass'
+import './cards.scss'

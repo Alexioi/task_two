@@ -1,1 +1,1 @@
-import './icon-text-list.sass'
+import './icon-text-list.scss'

@@ -1,3 +1,3 @@
-import "./calendar.sass";
+import "./calendar.scss";
 
 $(".calendar").datepicker();

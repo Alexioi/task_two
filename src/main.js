@@ -1,4 +1,4 @@
-import "./main.sass";
+import "./main.scss";
 
 import "jquery-mask-plugin";
 import "air-datepicker";

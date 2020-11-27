@@ -1,1 +1,1 @@
-import './caption.sass'
+import './caption.scss'

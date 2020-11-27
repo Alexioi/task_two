@@ -1,1 +1,1 @@
-import './registration.sass'
+import './registration.scss'

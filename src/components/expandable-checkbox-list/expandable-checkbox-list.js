@@ -1,4 +1,4 @@
-import "./expandable-checkbox-list.sass";
+import "./expandable-checkbox-list.scss";
 
 const expandableCheckboxListButtons = document.querySelectorAll(
   ".js-expandable-checkbox-list__button"

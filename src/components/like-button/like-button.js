@@ -1,4 +1,4 @@
-import './like-button.sass'
+import './like-button.scss'
 
 const likeButtons = document.querySelectorAll('.like-button')
 const likeButtonIcons = document.querySelectorAll('.like-button__icon')

@@ -1,3 +1,3 @@
-import './comment.sass'
+import './comment.scss'
 
 

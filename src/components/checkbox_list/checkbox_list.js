@@ -1,4 +1,4 @@
-import './checkbox_list.sass'
+import './checkbox_list.scss'
 
 const checkboxBtns = document.querySelectorAll('.checkbox_list__btn');
 const checkboxVisible = document.querySelectorAll('.checkbox_list__visible');

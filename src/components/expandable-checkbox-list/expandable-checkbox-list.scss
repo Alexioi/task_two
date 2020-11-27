@@ -1,0 +1,61 @@
+.expandable-checkbox-list {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__button {
+    border: none;
+    background: #ffffff;
+    background: url("./img/expandable-checkbox-list-button-open.svg") 50% 50% no-repeat;
+    font-size: 0;
+    width: 15px;
+    height: 15px;
+  }
+
+  &__items {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    margin-top: 17px;
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    margin-top: 10px;
+  }
+
+  &__input {
+    margin-right: 10px;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: url("./img/expandable-checkbox-list-button-off.svg");
+
+    &:checked {
+      background: url("./img/expandable-checkbox-list-button-on.svg");
+    }
+  }
+
+  &__text {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: rgba(31, 32, 65, 0.5);
+  }
+}
+
+.js-expandable-checkbox-list__items_hidden {
+  display: none;
+}
+
+.js-expandable-checkbox-list__button_close {
+  background-image: url("./img/expandable-checkbox-list-button-close.svg");
+}

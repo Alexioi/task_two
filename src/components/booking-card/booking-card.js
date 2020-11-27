@@ -1,1 +1,1 @@
-import './booking-card.sass'
+import './booking-card.scss'

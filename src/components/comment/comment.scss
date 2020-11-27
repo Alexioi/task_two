@@ -1,0 +1,53 @@
+.comment {
+  display: flex;
+
+  &__inner-wrapper {
+    width: 46px;
+    padding-left: 2px;
+  }
+
+  &__img {
+    width: 46px;
+    height: 46px;
+    border-radius: 32px;
+    margin-bottom: 12px;
+  }
+
+  &__like {
+    margin-left: 2px;
+  }
+
+  &__content {
+    margin-left: 10px;
+  }
+
+  &__author {
+    display: block;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 24px;
+    color: rgba(31, 32, 65, 0.75);
+  }
+
+  &__date {
+    display: block;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: rgba(31, 32, 65, 0.75);
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: rgba(31, 32, 65, 0.75);
+  }
+}

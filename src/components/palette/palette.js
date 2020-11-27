@@ -1,1 +1,1 @@
-import './palette.sass'
+import './palette.scss'

@@ -1,1 +1,1 @@
-import './subscription-text-field.sass'
+import './subscription-text-field.scss'

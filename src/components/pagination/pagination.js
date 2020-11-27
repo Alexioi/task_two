@@ -1,4 +1,4 @@
-import "./pagination.sass";
+import "./pagination.scss";
 
 const paginationList = document.querySelectorAll(".pagination__item");
 

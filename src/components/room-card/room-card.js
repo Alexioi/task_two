@@ -1,1 +1,1 @@
-import './room-card.sass'
+import './room-card.scss'

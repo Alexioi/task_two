@@ -1,1 +1,1 @@
-import './form_elements.sass'
+import './form_elements.scss'

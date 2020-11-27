@@ -1,1 +1,1 @@
-import "./room-search.sass";
+import "./room-search.scss";
