@@ -1,59 +1,60 @@
 .palette {
-  &__item {
-    display: flex;
-    margin-bottom: 20px;
-  }
+  display: flex;
 
   &__color {
-    height: 70px;
-    width: 70px;
+    height: 4.375rem;
+    width: 4.375rem;
     border-radius: 6px;
-    margin-right: 40px;
-  }
+    margin-right: 2.5rem;
+  
 
-  &__color-main {
+  &_main {
     background: rgba(31, 32, 65, 1);
   }
 
-  &__color-main-75 {
+  &_main-75 {
     background: rgba(31, 32, 65, 0.75);
   }
 
-  &__color-main-50 {
+  &_main-50 {
     background: rgba(31, 32, 65, 0.5);
   }
 
-  &__color-main-25 {
+  &_main-25 {
     background: rgba(31, 32, 65, 0.25);
   }
 
-  &__color-main-5 {
+  &_main-5 {
     background: rgba(31, 32, 65, 0.05);
   }
 
-  &__color-primary {
+  &_primary {
     background: #BC9CFF;
   }
 
-  &__color-secondary {
+  &_secondary {
     background: #6FCF97;
   }
-
-  &__color-name {
-    font-family: Quicksand;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 19px;
-    line-height: 29px;
-    margin: 0;
-    padding-top: 8px;
   }
 
-  &__color-hex {
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    white-space: nowrap;
     font-family: Quicksand;
     font-style: normal;
-    font-weight: normal;
-    font-size: 19px;
-    line-height: 29px;
+    font-size: 1.188rem;
+    line-height: 1.813rem;
+    
+    &_bold {
+      font-weight: bold;  
+    }
+  
+    &_normal {
+      font-weight: normal;   
+    }
   }
+
+
 }

@@ -1,8 +1,17 @@
-.colors-and-type__logo {
-  height: 145px;
-}
+.colors-and-type {
 
-.colors-and-type__main {
-  max-width: 1160px;
-  margin: 0 auto;
+  &__logo {
+    height: 145px;
+  }
+
+  &__main {
+    max-width: 1160px;
+    margin: auto;
+  }
+
+  &__palette {
+    display: grid;
+    row-gap: 1.25rem;
+  }
+
 }

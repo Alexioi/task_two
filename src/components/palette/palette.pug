@@ -1,19 +1,11 @@
-mixin palette
-
-  - var items = [
-  -   { header: 'Dark Shade 100%', text: '#1F2041', color: 'main' },
-  -   { header: 'Dark Shade 75%', text: '#1F2041', color: 'main-75' },
-  -   { header: 'Dark Shade 50%', text: '#1F2041', color: 'main-50' },
-  -   { header: 'Dark Shade 25%', text: '#1F2041', color: 'main-25' },
-  -   { header: 'Dark Shade 5%', text: '#1F2041', color: 'main-5' },
-  -   { header: 'Purpe', text: '#BC9CFF', color: 'primary' },
-  -   { header: 'Green', text: '#6FCF97', color: 'secondary' } 
-  - ]
+mixin palette(options)
+  - var colorClass = 'palette__color_' + options.color
 
   .palette
-    each item in items
-      .palette__item
-        div(class= 'palette__color-' + item.color).palette__color
-        .palette__text
-          h2.palette__color-name= item.header 
-          span.palette__color-hex= item.text
+    div.palette__color(class= colorClass)
+    .palette__text
+      span.palette__text_bold= options.label 
+      span.palette__text_normal= options.hex
+
+
+
