@@ -2,11 +2,13 @@ extends ../main.pug
 
 include ../../components/palette/palette
 include ../../components/type/type
+include ../../components/logo/logo
 
 block title
   title Colors and Type
 block content
   .colors-and-type__logo
+    +logo({full: false})
   .colors-and-type__main
     .colors-and-type__palette
       +palette({ label: 'Dark Shade 100%', hex: '#1F2041', color: 'main' })
