@@ -27,6 +27,7 @@ import "./components/room-search/room-search";
 import "./components/calendar/calendar";
 import "./components/booking-card/booking-card";
 import "./components/expandable-checkbox-list/expandable-checkbox-list";
+import "./components/type/type";
 
 import "./pages/form_elements/form-elements";
 import "./pages/colors-and-type/colors-and-type";

@@ -1,5 +1,4 @@
 .colors-and-type {
-
   &__logo {
     height: 145px;
   }
@@ -7,6 +6,14 @@
   &__main {
     max-width: 1160px;
     margin: auto;
+    display: flex;
+    justify-content: space-between;
+    @media screen and (max-width: 1200px) {
+      margin: 0 1.25rem;
+    }
+    @media screen and (max-width: 900px) {
+      flex-direction: column;
+    }
   }
 
   &__palette {
@@ -14,4 +21,12 @@
     row-gap: 1.25rem;
   }
 
+  &__type {
+    display: grid;
+    align-content: start;
+    row-gap: 3.125rem;
+    @media screen and (max-width: 900px) {
+      margin-top: 3.125rem;
+    }
+  }
 }

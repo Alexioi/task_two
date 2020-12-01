@@ -1,87 +1,98 @@
 .type {
-  display: grid;
-  grid-template-columns: 70px 30px 320px;
-  margin-bottom: 50px;
-}
+  display: flex;
 
-.type__tag {
-  margin-right: 30px;
-}
+  &__tag {
+    margin-right: 1.875rem;
 
-.type__tag-font-h1 {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 29px;
-  text-align: right;
-  color: rgba(31, 32, 65, 0.25);
-}
+    &_font-h1 {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 1.5rem;
+      line-height: 1.8125rem;
+      color: rgba(31, 32, 65, 0.25);
+      padding-left: 0.5rem;
+    }
 
-.type__tag-font-h2 {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 19px;
-  line-height: 23px;
-  text-align: right;
-  color: rgba(31, 32, 65, 0.25);
-}
+    &_font-h2 {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 1.1875rem;
+      line-height: 1.4375rem;
+      color: rgba(31, 32, 65, 0.25);
+      padding-left: 0.625rem;
+    }
 
-.type__tag-font-h3 {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 15px;
-  text-align: right;
-  text-transform: uppercase;
-  color: rgba(31, 32, 65, 0.25);
-}
+    &_font-h3 {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 0.75rem;
+      line-height: 0.9375rem;
+      text-transform: uppercase;
+      color: rgba(31, 32, 65, 0.25);
+      padding-left: 1.25rem;
+    }
 
-.type_tag-font-body {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 24px;
-  text-align: right;
-  color: rgba(31, 32, 65, 0.25);
-}
+    &_font-body {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 0.875rem;
+      line-height: 1.5rem;
+      color: rgba(31, 32, 65, 0.25);
+    }
+  }
 
-.type__text-font-h1 {
-  font-family: Quicksand;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 30px;
-  color: #1F2041;
-}
+  &__text {
+    &_font-h1 {
+      font-family: Quicksand;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 1.5rem;
+      line-height: 1.875rem;
+      color: #1f2041;
+      max-width: 21rem;
+      @media screen and (max-width: 900px) {
+        max-width: none;
+      }
+    }
 
-.type__text-font-h2 {
-  font-family: Quicksand;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 19px;
-  line-height: 24px;
-  color: #1F2041;
-}
+    &_font-h2 {
+      font-family: Quicksand;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 1.1875rem;
+      line-height: 1.5rem;
+      color: #1f2041;
+      max-width: 17.625rem;
+      @media screen and (max-width: 900px) {
+        max-width: none;
+      }
+    }
 
-.type__text-font-h3 {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 15px;
-  text-transform: uppercase;
-  color: #1F2041;
-}
+    &_font-h3 {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 0.75rem;
+      line-height: 0.9375rem;
+      text-transform: uppercase;
+      color: #1f2041;
+    }
 
-.type__text-font-body {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 24px;
-  color: rgba(31, 32, 65, 0.75);
+    &_font-body {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 0.875rem;
+      line-height: 1.5rem;
+      color: rgba(31, 32, 65, 0.75);
+      max-width: 18.8125rem;
+      @media screen and (max-width: 900px) {
+        max-width: none;
+      }
+    }
+  }
 }

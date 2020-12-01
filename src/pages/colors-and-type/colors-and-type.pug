@@ -1,6 +1,7 @@
 extends ../main.pug
 
 include ../../components/palette/palette
+include ../../components/type/type
 
 block title
   title Colors and Type
@@ -15,3 +16,8 @@ block content
       +palette({ label: 'Dark Shade 5%', hex: '#1F2041', color: 'main-5' })
       +palette({ label: 'Purple', hex: '#BC9CFF', color: 'primary' })
       +palette({ label: 'Green', hex: '#6FCF97', color: 'secondary' }) 
+    .colors-and-type__type
+      +type({ tag: 'H1', text: 'This one is the sub-section or widget title', class: 'font-h1' })
+      +type({ tag: 'H2', text: 'Next one is the item title inside widgets', class: 'font-h2' })
+      +type({ tag: 'H3', text: 'This is a label or CTA text', class: 'font-h3' })
+      +type({ tag: 'Body', text: 'This is the body text which is used for most of the design, like paragraphs, lists, etc.', class: 'font-body' })
