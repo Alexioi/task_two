@@ -1,49 +1,47 @@
 mixin footer
+  -
+    var linkList = [{header: 'Навигация',
+                    itemList: ['О нас',
+                              'Новости',
+                              'Служба поддержки',
+                              'Услуги'
+                    ]},
+                    {header: 'Навигация',
+                    itemList: ['О нас',
+                              'О сервесе',
+                              'Наша команда',
+                              'Вакансии',
+                              'Инвесторы'
+                    ]},
+                    {header: 'Служба поддержки',
+                    itemList: ['О нас',
+                              'Новости',
+                              'Служба поддержки',
+                              'Услуги'
+                    ]}
+    ]
+    var socialLinks = ['twitter.svg', 'facebook.svg', 'instagram.svg']
+
   .footer
     .footer__main
       .footer__item
-        +logo('full')
+        //- +logo('full')
         p.footer__logo-text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
-      .footer__item
-        h3.footer__nav-header Навигация
-        ul.footer__nav-link
-          li.footer__nav-item
-            a(href='#').footer__link О нас
-          li.footer__nav-ite
-            a(href='#').footer__link Новости
-          li.footer__nav-ite
-            a(href='#').footer__link Служба поддержки
-          li.footer__nav-ite
-            a(href='#').footer__link Услуги
-      .footer__item
-        h3.footer__nav-header О нас
-        ul.footer__nav-link
-          li
-            a(href='#').footer__link О сервесе
-          li
-            a(href='#').footer__link Наша команда
-          li
-            a(href='#').footer__link Вакансии
-          li
-            a(href='#').footer__link Инвесторы
-      .footer__item
-        h3.footer__nav-header Служба поддержки
-        ul.footer__nav-link
-          li
-            a(href='#').footer__link Соглашения
-          li
-            a(href='#').footer__link Сообщества
-          li
-            a(href='#').footer__link Связь с нами
+      .footer__gap
+      each linkItem in linkList
+        .footer__item
+          h3.footer__nav-header= linkItem.header
+          ul.footer__nav-link
+            each item in linkItem.itemList
+              li.footer__nav-item
+                a(href='#').footer__link= item
+        .footer__gap
       .footer__item
         h3.footer__nav-header Подписка
         p.footer__logo-text Получайте специальные предложения и новости сервиса
     .footer__copyright
       .footer__copyright-text Copyright © 2018 Toxin отель. Все права зачищены.
       .footer__social
-        a(href="#")
-          img(src='./twitter.svg').footer__social-img
-        a(href="#")
-          img(src='./facebook.svg').footer__social-img
-        a(href="#")
-          img(src='./instagram.svg').footer__social-img
+        each socialLink in socialLinks
+          a(href="#")
+            img(src='./img/' + socialLink).footer__social-img
