@@ -21,7 +21,7 @@ module.exports = {
         use: "pug-loader",
       },
       {
-        test: /\.scss$/,
+        test: /\.css|scss$/,
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
       {

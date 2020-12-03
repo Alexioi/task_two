@@ -1,0 +1,18 @@
+.headers-footers {
+  &__fon {
+    background: #F4F4F6;
+    min-height: 100vh;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  &__footer-mobile {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: minmax(auto, 768px);
+  }
+}

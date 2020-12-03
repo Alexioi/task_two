@@ -1,12 +1,27 @@
+include ../button/button
+include ../logo/logo
+
 mixin header(login, name)
+  -
+    var menuItems = [
+      { text: 'О нас', active: 'true' },
+      { text: 'Услуги' },
+      { text: 'Вакансии' },
+      { text: 'Новости' },
+      { text: 'Соглашения' }
+    ]
+
   .header 
-    +logo('true')
-    .header__nav
-      +menu
-      if login
-        .header__user-name= name
-      else
-        .header__button
-          +button('Войти', 'border')
-        .header__button
-          +button('Зарегистрироваться')
+    .header__container
+      +logo({full: true}) 
+      .header__left-block
+        ul.header__nav-list
+          each menuItem in menuItems
+            li.header__nav-item
+              a.header__link(href='#' class= menuItem.active ? 'header__link_active' : '')=  menuItem.text
+        if login
+          .header__user-name= name
+        else
+          .header__buttons
+            +button({text: 'Войти', type: 'border'})
+            +button({text: 'Зарегистрироваться'})

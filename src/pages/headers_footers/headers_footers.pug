@@ -1,13 +1,16 @@
 extends ../main.pug
+
 include ../../components/footer/footer
+include ../../components/header/header
 
 block title
   title Headers footers
 block content
-  //- +logo
-  //- +header
-  //- +header('true', 'Юлий Цезарь')
-  +footer
-  //- +footer
-  
-    
+  .headers-footers__fon 
+    .headers-footers__main
+      +logo({full: false})
+      +header
+      +header('true', 'Юлий Цезарь')
+      +footer({mobile: false})
+      .headers-footers__footer-mobile
+        +footer({mobile: true})

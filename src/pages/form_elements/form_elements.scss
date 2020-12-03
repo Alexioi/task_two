@@ -1,14 +1,14 @@
 .form-elements {
   &__row {
     width: 1160px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
+    margin: auto;
+    display: grid;
+    // grid-template-columns: 1fr 1fr 1fr;
   }
 
-  &__col {
-    width: 320px;
-  }
+  // &__col {
+  //   width: 320px;
+  // }
 
   // &__group-1
 
