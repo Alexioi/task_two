@@ -1,48 +1,71 @@
 include ../button/button
 
 mixin dropdown(options)
-
-  - if (options.type == 'guests') {
-  -   var inputValue = 'Сколько гостей'
-  -   var ControlButton = true
-  -   var items = [
-  -         {menuItem: 'взрослые', number: '0'},
-  -         {menuItem: 'дети', number: '0'},
-  -         {menuItem: 'младенцы', number: '0'}
-  -       ]
-  - } else if (options.type == 'conveniences') {  
-  -   var inputValue = 'Удобства'
-  -   var ControlButton = false
-  -   var items = [
-  -         {menuItem: 'спальни', number: '0'},
-  -         {menuItem: 'кровати', number: '0'},
-  -         {menuItem: 'ванные комнаты', number: '0'}
-  -       ]
-  - }
-  - var classOpen = options.opened ? '' : 'dropdown__menu_opened'
-  - if (options.number) {
-  -  for (var i = 0; i < options.number.length; i++) {
-  -     items[i].number = options.number[i]
-  -  }
-  - }
+  -
+    if (options.type == 'guests') {
+      var inputValue = 'Сколько гостей'
+      var ControlButton = true
+      var items = [
+            {menuItem: 'взрослые', number: '0'},
+            {menuItem: 'дети', number: '0'},
+            {menuItem: 'младенцы', number: '0'}
+          ]
+    } else if (options.type == 'conveniences') {  
+      var inputValue = 'Удобства'
+      var ControlButton = false
+      var items = [
+            {menuItem: 'спальни', number: '0'},
+            {menuItem: 'кровати', number: '0'},
+            {menuItem: 'ванные комнаты', number: '0'}
+          ]
+    }
+  - var classOpen = options.opened ? '' : 'dropdown__menu_closed'
+  -  
+    if (options.number) {
+      for (var i = 0; i < options.number.length; i++) {
+        items[i].number = options.number[i]
+      }
+    }
 
   .dropdown
     +caption({header: 'test'})
-    .dropdown__input-wrapper
-      input(type="text" value=inputValue readonly).dropdown__input
-      button.dropdown__switch-display-button switch
+    button.dropdown__menu-button
+      input.dropdown__input(type="text" value=inputValue readonly)
+      img.dropdown__img-open(src="./img/open.svg" alt="open")
     div(class=classOpen).dropdown__menu
       ul.dropdown__list
         each item in items     
           li.dropdown__item
             .dropdown__menu-item= item.menuItem
             .dropdown__button-list
-              button.dropdown__button.dropdown__button-minus -
+              button.dropdown__calc-button -
               span.dropdown__number= item.number
-              button.dropdown__button.dropdown__button-plus +  
+              button.dropdown__calc-button +
       if ControlButton
         .dropdown__control-button 
-          .dropdown__reset
-            +button({text: 'очистить', type: 'text'})      
-          .dropdown__apply
-            +button({text: 'применить', type: 'text'})
+          +button({text: 'очистить', type: 'text'})      
+          +button({text: 'применить', type: 'text'})
+
+
+
+
+  //- .dropdown
+  //-   +caption({header: 'test'})
+  //-   .dropdown__input-wrapper
+  //-     input(type="text" value=inputValue readonly).dropdown__input
+  //-     button.dropdown__switch-display-button switch
+  //-   div(class=classOpen).dropdown__menu
+  //-     ul.dropdown__list
+  //-       each item in items     
+  //-         li.dropdown__item
+  //-           .dropdown__menu-item= item.menuItem
+  //-           .dropdown__button-list
+  //-             button.dropdown__button.dropdown__button-minus -
+  //-             span.dropdown__number= item.number
+  //-             button.dropdown__button.dropdown__button-plus +  
+  //-     if ControlButton
+  //-       .dropdown__control-button 
+  //-         .dropdown__reset
+  //-           +button({text: 'очистить', type: 'text'})      
+  //-         .dropdown__apply
+  //-           +button({text: 'применить', type: 'text'})

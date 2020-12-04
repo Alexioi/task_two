@@ -1,10 +1,43 @@
 import "./dropdown.scss";
 
+const dropdownInputs = document.querySelectorAll('.dropdown__input')
+const dropdownMenu = document.querySelectorAll('.dropdown__menu')
 
+function calcCounter(sign, number) {
+  if (sign == '+') {
+    number = +number + 1
+  } else {
+    number = number - 1
+  }
+  return number 
+}
 
+for (let i = 0; i < dropdownMenu.length; i++) {
+  dropdownMenu[i].onclick = function () {
+    let targetMenu = event.target
+    let menuItems = this.querySelectorAll('.dropdown__button-list')
 
+    // if (targetMenu.classList.contains('dropdown__calc-button')) {
 
+      for (let i = 0; i < menuItems.length; i++) {
+        menuItems[i].onclick = function () {
+          let number = menuItems[i].querySelector('.dropdown__number')
+          let count = number.innerHTML
+          console.log(count)
 
+          count = calcCounter(targetMenu.innerHTML, count)
+
+          
+          
+          if (count > -1) {
+            number.innerHTML = count
+          }
+        }
+
+      }
+    // }
+  }
+}
 
 
 
