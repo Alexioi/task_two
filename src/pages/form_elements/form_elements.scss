@@ -1,28 +1,114 @@
 .form-elements {
-  &__row {
-    width: 1160px;
-    margin: auto;
+  &__main {
+    margin: 0 20px;
+    justify-content: center;
     display: grid;
-    // grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 320px minmax(auto, 126px) 320px minmax(auto, 72px) 320px;
+    grid-template-areas:
+      "group-1  ... group-2  ...      group-3"
+      "group-4  ... group-5  ...      group-6"
+      "group-7  ... group-8  ...      group-9"
+      "group-10 ... group-11 group-11 group-11";
+    @media screen and (max-width: 1100px) {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 40px;
+      grid-template-areas:
+        "group-1  group-2"
+        "group-3  group-4"
+        "group-5  group-6"
+        "group-7  group-8"
+        "group-9  group-10"
+        "group-11  group-11";
+    }
+    @media screen and (max-width: 900px) {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "group-1"
+        "group-2"
+        "group-3"
+        "group-4"
+        "group-5"
+        "group-6"
+        "group-7"
+        "group-8"
+        "group-9"
+        "group-10"
+        "group-11";
+    }
   }
 
-  // &__col {
-  //   width: 320px;
-  // }
+  &__group-1 {
+    grid-area: group-1;
+  }
 
-  // &__group-1
+  &__inputs-top-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 
-  // &__group-2
+  &__inputs-bottom-group {
+    margin-top: 40px;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
 
-  // &__group-3
+  &__group-2 {
+    grid-area: group-2;
+  }
 
-  // &__group-4
+  &__toggle-group {
+        display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
 
-  // &__group-5
+  &__group-3 {
+    grid-area: group-3;
+  }
 
-  // &__group-6
+  &__buttons-group {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
 
-  // &__group-7
+  &__buttons-row {
+    display: flex;
+    gap: 20px;
+  }
 
-  // &__group-8
+  &__group-4 {
+    grid-area: group-4;
+  }
+
+  &__group-5 {
+    grid-area: group-5;
+  }
+
+  &__group-6 {
+    grid-area: group-6;
+  }
+
+  &__group-7 {
+    grid-area: group-7;
+  }
+
+  &__group-8 {
+    grid-area: group-8;
+  }
+
+  &__group-9 {
+    grid-area: group-9;
+  }
+
+  &__group-10 {
+    grid-area: group-10;
+  }
+
+  &__group-11 {
+    grid-area: group-11;
+  }
 }
