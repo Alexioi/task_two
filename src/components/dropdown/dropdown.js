@@ -13,7 +13,7 @@ function calcCounter(sign, number) {
 }
 
 for (let i = 0; i < dropdownMenu.length; i++) {
-  dropdownMenu[i].onclick = function () {
+  dropdownMenu[i].onclick = function(event) {
     let targetMenu = event.target
     let menuItems = this.querySelectorAll('.dropdown__button-list')
 

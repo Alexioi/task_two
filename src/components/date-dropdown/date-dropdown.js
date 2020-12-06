@@ -1,5 +1,5 @@
 import "./date-dropdown.scss";
-import './datapicker.scss'
+
 
 // $(".js-date-dropdown__input").mask(
 //   "ДД.ММ.ГГГГ", 

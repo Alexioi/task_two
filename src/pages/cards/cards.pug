@@ -11,16 +11,14 @@ block title
   title Cards
 block content
   .cards
-    .cards__container
-      .cards__col
-        .cards__item
-          //- +room-search
+    .cards__main
+      .cards__column
+        +booking-card
         +registration
-      .cards__col
-        .cards__item
-          //- +booking-card
+      .cards__column
+        +room-search
         +login
-      .cards__col
-        .cards__item
-          +calendar
+      .cards__column
+        +calendar
+        +room-card 
         +room-card 

@@ -15,13 +15,9 @@ mixin booking-card
       })
     .booking-card__dropdown
       +dropdown({
-        type: 'test',
-        opened: 'True',
-        items: [
-          {menuItem: 'взрослые', number: '0'},
-          {menuItem: 'дети', number: '2'},
-          {menuItem: 'младенцы', number: '5'}
-        ],
-      })
+          type: 'guests',
+          opened: 'True',
+          number: [0, 2, 5]
+        })
     .booking-card__service-list
     +button({text: 'забронировать', type: 'long'})

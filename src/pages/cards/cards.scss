@@ -1,20 +1,23 @@
 .cards {
-  background: #F4F4F6;
+  background: #f4f4f6;
   min-height: 100vh;
 
-  &__container {
-    max-width: 1160px;
-    margin: 0 auto;
-    display: flex;
+  &__main {
+    display: grid;
+    grid-template-columns: 380px 380px 320px;
+    gap: 40px;
     justify-content: center;
-    flex-wrap: wrap;
+    @media screen and (max-width: 1200px) {
+      grid-template-columns: 380px 380px;
+    }
+    @media screen and (max-width: 900px) {
+      grid-template-columns: minmax(auto, 380px);
+    }
   }
 
-  &__col {
-    margin: 0 20px 40px 20px;
-  }
-
-  &__item {
-    margin-bottom: 40px;
+  &__column {
+    display: grid;
+    align-content: flex-start;
+    gap: 40px;
   }
 }
