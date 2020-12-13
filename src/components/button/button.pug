@@ -1,16 +1,33 @@
 mixin button(options)
-  if options.type == 'border'
-    button.button-border(
-      class=options.hover ? 'button-border_hovered' : ''
-    )
-      div= options.text
-  else if options.type == 'text'
-    button.button-text(
-      class=options.hover ? 'button-text_hovered' : ''
-    )= options.text
-  else if options.type == 'long'
-    button.button-long= options.text
-  else
-    button.button(
-      class=options.hover ? 'button_hovered' : ''
-    )= options.text
+  -
+    var buttonClass = ''
+
+    buttonClass += options.type == 'textual' ? 'button_textual' : 'button'
+    buttonClass += options.type == 'long' ? ' button_long' : ''
+    buttonClass += options.hover ? ' button_hovered' : ''
+
+
+  button(class= buttonClass)
+    if options.type == 'outline'
+      .button__text_outline= options.text
+    else
+      = options.text
+
+
+
+
+  //- if options.type == 'border'
+  //-   button.button-border(
+  //-     class=options.hover ? 'button-border_hovered' : ''
+  //-   )
+  //-     div= options.text
+  //- else if options.type == 'text'
+  //-   button.button-text(
+  //-     class=options.hover ? 'button-text_hovered' : ''
+  //-   )= options.text
+  //- else if options.type == 'long'
+  //-   button.button-long= options.text
+  //- else
+  //-   button.button(
+  //-     class=options.hover ? 'button_hovered' : ''
+  //-   )= options.text
