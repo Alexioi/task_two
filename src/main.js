@@ -1,7 +1,5 @@
 import "normalize.css";
 
-import "./main.scss";
-
 import "jquery-mask-plugin";
 import "air-datepicker";
 
@@ -11,3 +9,4 @@ function importAll(r) {
 
 importAll(require.context("./components", true, /\.js$/));
 importAll(require.context("./pages", true, /\.js$/));
+importAll(require.context("./style", true, /\.scss$/));

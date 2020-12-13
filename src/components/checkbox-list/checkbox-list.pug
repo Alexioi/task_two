@@ -1,0 +1,20 @@
+include ../title/title
+
+mixin checkbox-list(options)
+  -
+    var captionClass = options.type == 'rich' ? 'checkbox-list__caption_bold' : ''
+    var itemsClass = options.type == 'expandable' ? 'js-checkbox-list__items' : ''
+    itemsClass += options.hidden == true ? 'js-checkbox-list__items_hidden' : ''
+
+  .checkbox-list
+    +title({text: options.title})
+    if options.type == 'expandable'
+      .material-icons.checkbox-list__button.js-checkbox-list__button keyboard_arrow_down
+    ul.checkbox-list__items(class= itemsClass)
+      each item in options.items
+        li.checkbox-list__item
+          label.checkbox-list__label
+            input.checkbox-list__input(type='checkbox' checked = item.checked ? true : false)
+            div.checkbox-list__caption(class= captionClass)= item.text
+          if options.type == 'rich'
+            .checkbox-list__hint= item.hint

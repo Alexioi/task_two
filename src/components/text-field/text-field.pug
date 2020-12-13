@@ -1,10 +1,10 @@
 include ../caption/caption
 
 mixin text-field(options)
-
-  - var inputClass = ''
-  - inputClass += options.hover ? ' text-field__input_hovered' : ''
-  - inputClass += options.masked ? ' js-text-field__input_masked' : ''
+  - 
+    var inputClass = ''
+    inputClass += options.hover ? ' text-field__input_hovered' : ''
+    inputClass += options.masked ? ' js-text-field__input_masked' : ''
 
   label.text-field
     if options.header 
@@ -15,4 +15,3 @@ mixin text-field(options)
       placeholder= options.value
       wrap= 'off'
     )
-

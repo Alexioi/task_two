@@ -6,7 +6,6 @@ include ../../components/caption/caption
 include ../../components/text-field/text-field
 include ../../components/button/button
 include ../../components/toggle/toggle
-include ../../components/checkbox_list/checkbox_list
 include ../../components/radio-buttons/radio-buttons
 include ../../components/pagination/pagination
 include ../../components/icon-text-list/icon-text-list
@@ -14,8 +13,8 @@ include ../../components/bullet-list/bullet-list
 include ../../components/dropdown/dropdown
 include ../../components/subscription-text-field/subscription-text-field
 include ../../components/date-dropdown/date-dropdown
-include ../../components/expandable-checkbox-list/expandable-checkbox-list
 include ../../components/ratebutton/ratebutton
+include ../../components/checkbox-list/checkbox-list
 
 block title
   title Form elements
@@ -39,19 +38,19 @@ block content
           header: 'masked text field',
           legend: 'Default',
           masked: 'true',
-          value: 'ДД.ММ.ГГГГ'
         })
       .form-elements__inputs-bottom-group
         +date-dropdown({leftHeader: 'date Dropdown', rightHeader: 'date Dropdown', rightValue: '19.08.2019'})
         +subscription-text-field
     .form-elements__group-2
-      +checkbox_list({
+      +checkbox-list({
+        title: 'Checkbox Buttons',
         items: [
           {text: 'Можно курить'}, 
           {text: 'Можно с питомцами',
-          checked: 'checked'}, 
+          checked: true}, 
           {text: 'Можно пригласить гостей (до 10 человек)',
-          checked: 'checked'}
+          checked: true}
         ]
       })
       +radio-buttons
@@ -96,7 +95,10 @@ block content
         type: 'conveniences'  
       })
     .form-elements__group-7
-      +expandable-checkbox-list({
+      +checkbox-list({
+        title: 'expandable checkbox list',
+        type: 'expandable',
+        hidden: true,
         items: [
           {text: 'Завтрак'},
           {text: 'Письменный стол',
@@ -111,8 +113,12 @@ block content
           {text: 'Шампунь'}
         ],
       })
-      +expandable-checkbox-list({
-        open: true,
+
+      br
+
+      +checkbox-list({
+        title: 'expandable checkbox list',
+        type: 'expandable',
         items: [
           {text: 'Завтрак'},
           {text: 'Письменный стол',
@@ -128,12 +134,14 @@ block content
         ],
       })
     .form-elements__group-8
-      +checkbox_list({
+      +checkbox-list({
+        title: 'Rich Checkbox Buttons',
+        type: 'rich',
         items: [
-          {desc: 'Широкий коридор', 
-          sub: 'Ширина коридоров в номере не менее 91 см.'}, 
-          {desc: 'Помощник для инвалидов', 
-          sub: 'На 1 этаже вас встретит специалист и проводит до номера.'}
+          {text: 'Широкий коридор', 
+          hint: 'Ширина коридоров в номере не менее 91 см.'}, 
+          {text: 'Помощник для инвалидов', 
+          hint: 'На 1 этаже вас встретит специалист и проводит до номера.'}
         ], 
         type: 'rich'
       })

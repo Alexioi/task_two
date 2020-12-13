@@ -11,20 +11,21 @@ dotsRight.className = "pagination__dots";
 dotsRight.innerHTML = "...";
 
 let btnLast = document.createElement("button");
-btnLast.className = "pagination__next-btn";
-btnLast.innerHTML = "Last";
-btnLast.onclick = function() {
+btnLast.className = "pagination__next-btn material-icons";
+btnLast.innerHTML = "arrow_back";
+btnLast.onclick = function () {
   let target = document.querySelector(".pagination__item_focus").innerText - 1;
   hidePaginationItems(target);
-} 
+};
 
 let btnNext = document.createElement("button");
-btnNext.className = "pagination__next-btn";
-btnNext.innerHTML = "Next";
+btnNext.className = "pagination__next-btn material-icons";
+btnNext.innerHTML = "arrow_forward";
 btnNext.onclick = function () {
-  let target = Number(document.querySelector(".pagination__item_focus").innerText) + 1;
+  let target =
+    Number(document.querySelector(".pagination__item_focus").innerText) + 1;
   hidePaginationItems(target);
-}; 
+};
 
 function hidePaginationItems(target) {
   let itemsVisible = [];

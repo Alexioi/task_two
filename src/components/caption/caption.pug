@@ -1,10 +1,8 @@
 mixin caption(options)
   if options.legend
-    .caption
-      h3.caption__header= options.header
-      span.caption__legend= options.legend
-  else if options.header
-    .caption
-      h3.caption__header= options.header
+    span.caption= options.header
+    span.caption__legend= options.legend
+  else 
+    span.caption= options.header
 
 
