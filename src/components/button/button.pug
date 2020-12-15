@@ -1,17 +1,37 @@
 mixin button(options)
-  -
-    var buttonClass = ''
+  - var buttonClass = options.hover ? 'button_hovered' : ''
 
-    buttonClass += options.type == 'textual' ? 'button_textual' : 'button'
-    buttonClass += options.type == 'long' ? ' button_long' : ''
-    buttonClass += options.hover ? ' button_hovered' : ''
+  case options.type
+    when 'outline'
+      button.button_outline
+        .button__background
+          span.button__text_outline= options.text
+    when 'textual'
+      button.button_textual= options.text
+    when 'long'
+      button.button.button_long= options.text
+        span.button__arrow.material-icons arrow_forward
+    default
+      button.button= options.text
 
 
-  button(class= buttonClass)
-    if options.type == 'outline'
-      .button__text_outline= options.text
-    else
-      = options.text
+
+  //- -
+  //-   var buttonClass = ''
+
+  //-   //- buttonClass += options.type == 'textual' ? 'button_textual' : 'button'
+  //-   buttonClass += options.type == 'long' ? ' button_long' : ''
+  //-   buttonClass += options.hover ? 'button_hovered' : ''
+
+  //- if options.type == 'textual'
+  //-   button.button_textual= options.text
+  //- else
+  //-   button.button
+  //-     if options.type == 'outline'
+  //-       .button__background
+  //-         span.button__text.button__text_outline= options.text
+  //-     else
+  //-       span.button__text= options.text
 
 
 
