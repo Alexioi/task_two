@@ -53,14 +53,25 @@ block content
           checked: true}
         ]
       })
-      +radio-buttons
+      .form-elements__radio-buttons-title
+        +title({text: 'Radio Buttons'})
+      .form-elements__radio-buttons-group
+        +radio-buttons
+      .form-elements__toggle-title
+        +title({text: 'Toggle'})
       .form-elements__toggle-group
         +toggle({checked: true})
         +toggle({checked: false})
-      +like-button({number: 2})
-      +like-button({number: 12, checked: 'true'})
-      +ratebutton('raiting1', 4)  
-      +ratebutton('raiting2', 5)  
+      .form-elements__like-button-title
+        +title({text: 'like button'}) 
+      .form-elements__like-button-group
+        +like-button({number: 2})
+        +like-button({number: 12, checked: 'true'})
+      .form-elements__rate-button-title
+        +title({text: 'rate button'})
+      .form-elements__rate-button-group
+        +ratebutton('raiting1', 4)  
+        +ratebutton('raiting2', 5)  
     .form-elements__group-3
       .form-elements__buttons-group
         .form-elements__buttons-row

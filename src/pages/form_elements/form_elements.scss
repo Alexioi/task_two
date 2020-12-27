@@ -63,10 +63,43 @@
     grid-area: group-2;
   }
 
+  &__radio-buttons-title {
+    margin-top: 39px;
+  }
+
+  &__radio-buttons-group {
+    margin-top: 15 px;
+  }
+
+  &__toggle-title {
+    margin-top: 40px;
+  }
+
   &__toggle-group {
-        display: flex;
+    margin-top: 14px;
+    display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 13px;
+  }
+
+  &__like-button-title {
+    margin-top: 43px;
+  }
+
+  &__like-button-group {
+    margin-top: 16px;
+    display: flex;
+    gap: 10px;
+  }
+
+  &__rate-button-title {
+    margin-top: 37px;
+  }
+
+  &__rate-button-group {
+    margin-top: 16px;
+    display: flex;
+    gap: 20px;
   }
 
   &__group-3 {
