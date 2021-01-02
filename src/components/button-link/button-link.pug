@@ -1,0 +1,4 @@
+mixin button-link(options)
+  - var buttonClass = options.hover ? 'button-link_hovered' : ''
+
+  button(class= buttonClass).button-link= options.text

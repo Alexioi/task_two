@@ -1,53 +1,10 @@
 mixin button(options)
-  - var buttonClass = options.hover ? 'button_hovered' : ''
-
-  case options.type
-    when 'outline'
-      button.button_outline
-        .button__background
-          span.button__text_outline= options.text
-    when 'textual'
-      button.button_textual= options.text
-    when 'long'
-      button.button.button_long= options.text
-        span.button__arrow.material-icons arrow_forward
-    default
-      button.button= options.text
+  - 
+    var buttonClass = options.hover ? 'button_hovered' : ''
+    var textClass = options.type == 'outline' ? 'button__text_outline' : ''
 
 
-
-  //- -
-  //-   var buttonClass = ''
-
-  //-   //- buttonClass += options.type == 'textual' ? 'button_textual' : 'button'
-  //-   buttonClass += options.type == 'long' ? ' button_long' : ''
-  //-   buttonClass += options.hover ? 'button_hovered' : ''
-
-  //- if options.type == 'textual'
-  //-   button.button_textual= options.text
-  //- else
-  //-   button.button
-  //-     if options.type == 'outline'
-  //-       .button__background
-  //-         span.button__text.button__text_outline= options.text
-  //-     else
-  //-       span.button__text= options.text
-
-
-
-
-  //- if options.type == 'border'
-  //-   button.button-border(
-  //-     class=options.hover ? 'button-border_hovered' : ''
-  //-   )
-  //-     div= options.text
-  //- else if options.type == 'text'
-  //-   button.button-text(
-  //-     class=options.hover ? 'button-text_hovered' : ''
-  //-   )= options.text
-  //- else if options.type == 'long'
-  //-   button.button-long= options.text
-  //- else
-  //-   button.button(
-  //-     class=options.hover ? 'button_hovered' : ''
-  //-   )= options.text
+  button(class= buttonClass).button
+    span.button__text(class= textClass)= options.text
+      if options.type == 'long'
+        span.button__test.material-icons arrow_forward

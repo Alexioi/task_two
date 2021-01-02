@@ -15,11 +15,15 @@ include ../../components/subscription-text-field/subscription-text-field
 include ../../components/date-dropdown/date-dropdown
 include ../../components/ratebutton/ratebutton
 include ../../components/checkbox-list/checkbox-list
+include ../../components/logo/logo
+include ../../components/range-slider/range-slider
+include ../../components/button-link/button-link
 
 block title
   title Form elements
 block content
-
+  .form-elements__logo
+    +logo({full: false})
   .form-elements__main
     .form-elements__group-1
       .form-elements__inputs-top-group
@@ -73,6 +77,7 @@ block content
         +ratebutton('raiting1', 4)  
         +ratebutton('raiting2', 5)  
     .form-elements__group-3
+      +range-slider
       .form-elements__buttons-group
         .form-elements__buttons-row
           +button({text: 'CLICK ME'})
@@ -81,10 +86,9 @@ block content
           +button({text: 'CLICK ME', type: 'outline'})
           +button({text: 'CLICK ME', type: 'outline', hover: true})
         .form-elements__buttons-row
-          +button({text: 'CLICK ME', type: 'textual'})
-          +button({text: 'CLICK ME', type: 'textual', hover: true})
+          +button-link({text: 'CLICK ME'})
+          +button-link({text: 'CLICK ME', hover: true})
         +button({text: 'перейти к оплате', type: 'long'})
-        +button({text: 'CLICK ME'})
         +pagination
     .form-elements__group-4
       +dropdown({
