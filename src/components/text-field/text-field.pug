@@ -7,11 +7,15 @@ mixin text-field(options)
     inputClass += options.masked ? ' js-text-field__input_masked' : ''
 
   label.text-field
-    if options.header 
-      .text-field__input-header
-        +caption({header: options.header, legend: options.legend})
+    if options.title
+      .text-field__header
+        +title({text: options.title})
+        if options.hint
+          span.text-field__hint= options.hint
     input.text-field__input(
       class= inputClass
       placeholder= options.value
       wrap= 'off'
     )
+    if options.type == 'dropdown'
+      button.text-field__button.material-icons expand_more

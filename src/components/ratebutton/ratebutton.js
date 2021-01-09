@@ -1,1 +1,0 @@
-import "./ratebutton.scss";

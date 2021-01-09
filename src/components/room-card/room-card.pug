@@ -1,6 +1,13 @@
+include ../room-number/room-number
+include ../rating/rating
+
 mixin room-card(options)
   .room-foto
     img.room-foto__img(src='./img/test.png')
     .room-foto__wrapper
-      .room-foto__line-primary 111
-      .room-foto__line-secondary
+      .room-foto__header
+        +room-number({numberValue: options.numberValue, luxe: options.luxe, price: options.price})
+      .room-foto__footer
+        +rating
+        .room-foto__reviews
+          <span class="room-foto__reviews-number">145</span> Отзывов

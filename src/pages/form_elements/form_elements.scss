@@ -113,10 +113,15 @@
     grid-area: group-3;
   }
 
+  &__buttons-title {
+
+  }
+
   &__buttons-group {
     display: flex;
     flex-direction: column;
     gap: 30px;
+    margin-top: 16px;
   }
 
   &__buttons-row {

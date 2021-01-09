@@ -1,0 +1,10 @@
+mixin room-number(options)
+  .room-number
+    .room-number__number
+      span.room-number__number-symbol= "№ "
+      span.room-number__number-value= options.numberValue
+      if options.luxe
+        span.room-number__luxe= " люкс"
+    .room-number__price
+      span.room-number__price-value= options.price + "₽ "
+      span.room-number__price-text  в сутки 

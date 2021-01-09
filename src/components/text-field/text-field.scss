@@ -1,17 +1,32 @@
 .text-field {
-  &__input-header {
+  position: relative;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 5px;
   }
 
+  &__hint {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 12px;
+    text-transform: uppercase;
+    color: rgba(31, 32, 65, 0.5);
+  }
+
   &__input {
-    padding: 0 15px;
+    padding-left: 15px;
+    padding-right: 25px;
     border: 1px solid rgba(31, 32, 65, 1);
     border-radius: 4px;
     font-family: Montserrat;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
-    line-height: 42px;
+    line-height: 40px;
     color: rgba(31, 32, 65, 1);
     width: 100%;
     opacity: 0.25;
@@ -24,5 +39,15 @@
       color: rgba(31, 32, 65, 0.75);
       outline: none;
     }
+  }
+
+  &__button {
+    position: absolute;
+    background: white;
+    bottom: 10px;
+    right: 5px;
+    border: none;
+    cursor: pointer;
+    color: rgba(31, 32, 65, 0.5);
   }
 }

@@ -20,5 +20,13 @@ block content
         +login
       .cards__column
         +calendar
-        +room-card 
-        +room-card 
+        +room-card({
+          numberValue: 888, 
+          luxe: true, 
+          price: '9 990'
+        })
+        +room-card({
+          numberValue: 888, 
+          luxe: false, 
+          price: '9 990'
+        }) 

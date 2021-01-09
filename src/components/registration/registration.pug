@@ -20,7 +20,7 @@ mixin registration
         })
       +text-field({value: 'Пароль'})
     .registration__toggle
-      +toggle
+      +toggle({enable: false})
     .registration__button
       +button({text: 'перейти к оплате', type: 'long'})
     .registration__login
