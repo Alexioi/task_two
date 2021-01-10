@@ -1,2 +1,6 @@
 mixin rating(options)
-  121
+
+  .rating
+    - for (var i = 0; i < 5; i++)
+        span.rating__star(class= options.quantity > i ? '' : 'rating__star_outline')
+

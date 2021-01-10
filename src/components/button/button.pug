@@ -2,6 +2,7 @@ mixin button(options)
   - 
     var buttonClass = options.hover ? 'button_hovered' : ''
     var textClass = options.type == 'outline' ? 'button__text_outline' : ''
+    buttonClass += options.type == 'long' ? ' button_long' : ''
 
 
   button(class= buttonClass).button

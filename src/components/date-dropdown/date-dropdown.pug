@@ -1,20 +1,14 @@
-include ../../components/caption/caption
+include ../../components/title/title
 
 mixin date-dropdown(options)
   .date-dropdown
-    label.date-dropdown__wrapper-left
-      .date-dropdown__header
-        +caption({header: options.leftHeader})
-      input.date-dropdown__input.js-date-dropdown__input(
-        value= options.leftValue ? options.leftValue : 'ДД.ММ.ГГГГ'
-        wrap= 'off'
-      )
-      button.date-dropdown__btn.js-date-dropdown__btn select
-    label.date-dropdown__wrapper-right
-      .date-dropdown__header
-        +caption({header: options.rightHeader})
-      input.date-dropdown__input.js-date-dropdown__input(
-        value= options.rightValue ? options.rightValue : 'ДД.ММ.ГГГГ'
-        wrap= 'off'
-      )
-      button.date-dropdown__btn.js-date-dropdown__btn select
+    +text-field({
+      title: options.leftHeader,
+      value: 'Email',
+      type: 'dropdown'
+    })
+    +text-field({
+      title: options.rightHeader,
+      value: 'Email',
+      type: 'dropdown'
+    })

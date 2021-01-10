@@ -11,4 +11,4 @@ import "./date-dropdown.scss";
 //   }
 // );
 
-$(".js-date-dropdown__input").datepicker();
+// $(".js-date-dropdown__input").datepicker();

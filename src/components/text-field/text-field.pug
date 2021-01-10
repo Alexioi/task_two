@@ -17,5 +17,7 @@ mixin text-field(options)
       placeholder= options.value
       wrap= 'off'
     )
-    if options.type == 'dropdown'
-      button.text-field__button.material-icons expand_more
+    if options.type == 'dropdown' 
+      button.text-field__button.text-field__expand-more.material-icons expand_more
+    else if options.type == 'subscription'
+      button.text-field__button.text-field__arrow-forward

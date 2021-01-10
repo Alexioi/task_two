@@ -1,4 +1,4 @@
-include ../button/button
+include ../button-link/button-link
 
 mixin dropdown(options)
   -
@@ -28,10 +28,11 @@ mixin dropdown(options)
     }
 
   .dropdown
-    +caption({header: 'test'})
-    button.dropdown__menu-button
-      input.dropdown__input(type="text" value=inputValue readonly)
-      img.dropdown__img-open(src="./img/open.svg" alt="open")
+    +text-field({
+      title: 'Dropdown',
+      value: 'Сколько гостей',
+      type: 'dropdown',
+    })
     div(class=classOpen).dropdown__menu
       ul.dropdown__list
         each item in items     
@@ -42,30 +43,6 @@ mixin dropdown(options)
               span.dropdown__number= item.number
               button.dropdown__calc-button +
       if ControlButton
-        .dropdown__control-button 
-          +button({text: 'очистить', type: 'text'})      
-          +button({text: 'применить', type: 'text'})
-
-
-
-
-  //- .dropdown
-  //-   +caption({header: 'test'})
-  //-   .dropdown__input-wrapper
-  //-     input(type="text" value=inputValue readonly).dropdown__input
-  //-     button.dropdown__switch-display-button switch
-  //-   div(class=classOpen).dropdown__menu
-  //-     ul.dropdown__list
-  //-       each item in items     
-  //-         li.dropdown__item
-  //-           .dropdown__menu-item= item.menuItem
-  //-           .dropdown__button-list
-  //-             button.dropdown__button.dropdown__button-minus -
-  //-             span.dropdown__number= item.number
-  //-             button.dropdown__button.dropdown__button-plus +  
-  //-     if ControlButton
-  //-       .dropdown__control-button 
-  //-         .dropdown__reset
-  //-           +button({text: 'очистить', type: 'text'})      
-  //-         .dropdown__apply
-  //-           +button({text: 'применить', type: 'text'})
+        .dropdown__control-button      
+          +button-link({text: 'применить'})
+          +button-link({text: 'очистить'}) 

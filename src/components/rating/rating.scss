@@ -1,0 +1,12 @@
+.rating {
+  &__star {
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    background: no-repeat url(./img/star.svg) center center;
+
+    &_outline {
+      background: no-repeat url(./img/star_outline.svg) center center;
+    }
+  }
+}

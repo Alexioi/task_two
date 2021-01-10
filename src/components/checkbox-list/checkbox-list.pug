@@ -4,7 +4,7 @@ mixin checkbox-list(options)
   -
     var captionClass = options.type == 'rich' ? 'checkbox-list__caption_bold' : ''
     var itemsClass = options.type == 'expandable' ? 'js-checkbox-list__items' : ''
-    itemsClass += options.hidden == true ? 'js-checkbox-list__items_hidden' : ''
+    itemsClass += options.hidden == true ? ' js-checkbox-list__items_hidden' : ''
 
   .checkbox-list
     +title({text: options.title})

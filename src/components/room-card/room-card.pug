@@ -8,6 +8,6 @@ mixin room-card(options)
       .room-foto__header
         +room-number({numberValue: options.numberValue, luxe: options.luxe, price: options.price})
       .room-foto__footer
-        +rating
+        +rating({quantity: options.quantity})
         .room-foto__reviews
           <span class="room-foto__reviews-number">145</span> Отзывов
