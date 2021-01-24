@@ -1,0 +1,10 @@
+.login {
+  &__main {
+    display: flex;
+    justify-content: center;
+    padding-top: 172px;
+    padding-bottom: 172px;
+    background-image: url(./img/image.png);
+    background-size: cover;
+  }
+}

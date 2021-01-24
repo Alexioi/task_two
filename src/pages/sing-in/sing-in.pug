@@ -1,10 +1,13 @@
 extends ../main.pug
 
 include ../../components/footer/footer
+include ../../components/login/login
 include ../../components/header/header
 
 block title
   title Headers footers
 block content
   +header
+  .login__main
+    +login
   +footer({mobile: false})

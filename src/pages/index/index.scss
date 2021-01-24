@@ -1,0 +1,31 @@
+.index {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  height: 100vh;
+
+  &__menu {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__menu-item {
+    list-style-type: none;
+  }
+
+  &__link {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 2rem;
+
+    &_purple {
+      color: #bc9cff;
+    }
+
+    &_green {
+      color: #6fcf97;
+    }
+  }
+}

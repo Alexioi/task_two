@@ -1,0 +1,9 @@
+.sing-up {
+  &__main {
+    display: flex;
+    justify-content: center;
+    background-image: url(./img/image.png);
+    background-size: cover;
+    padding: 19px 0;
+  }
+}

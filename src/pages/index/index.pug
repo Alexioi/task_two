@@ -3,11 +3,23 @@ extends ../main.pug
 block title
   title Contents
 block content
-  div
-    a(href="/colors-and-type.html") Colors and type
-  div
-    a(href="/form_elements.html") Form elements
-  div
-    a(href="/headers_footers.html") Headers footers
-  div
-    a(href="/cards.html") Cards
+  -
+    var menuIndexLinks = [
+      {link: "/colors-and-type.html", name: "Colors and type", color: "Purple"},
+      {link: "/form_elements.html", name: "Form elements", color: "Purple"},
+      {link: "/cards.html", name: "Cards", color: "Purple"},
+      {link: "/headers_footers.html", name: "Headers footers", color: "Purple"},
+      {link: "/landing-page.html", name: "Landing page"},
+      {link: "/search-room.html", name: "Search room"},
+      {link: "/room-details.html", name: "Room details"},
+      {link: "/sing-in.html", name: "Sign in"},
+      {link: "/sing-up.html", name: "Registration"},
+    ]
+  
+  .index
+    each menuIndexLink in menuIndexLinks
+      - var menuIndexLinkColor = menuIndexLink.color == "Purple" ? 'index__link_purple' : 'index__link_green'
+
+      ul.index__menu
+        li.index__menu-item
+          a.index__link(href=menuIndexLink.link class=menuIndexLinkColor)= menuIndexLink.name
