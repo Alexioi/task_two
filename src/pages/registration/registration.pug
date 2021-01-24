@@ -1,0 +1,14 @@
+extends ../main.pug
+
+include ../../components/footer/footer
+include ../../components/header/header
+include ../../components/registration/registration
+
+block title
+  title Headers footers
+block content
+  +header
+  .registration__main 
+    div dasda
+    //- +registration
+  +footer({mobile: false})

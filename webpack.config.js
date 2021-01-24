@@ -89,6 +89,14 @@ module.exports = {
       template: "./src/pages/cards/cards.pug",
       filename: "cards.html",
     }),
+    new HtmlWebpackPlugin({
+      template: "./src/pages/registration/registration.pug",
+      filename: "registration.html",
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/pages/sing-in/sing-in.pug",
+      filename: "sing-in.html",
+    }),
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery",

@@ -1,0 +1,10 @@
+extends ../main.pug
+
+include ../../components/footer/footer
+include ../../components/header/header
+
+block title
+  title Headers footers
+block content
+  +header
+  +footer({mobile: false})
