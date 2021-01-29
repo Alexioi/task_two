@@ -1,38 +1,38 @@
+@import './datepicker.css';
+
+.datepicker-inline .datepicker {
+	width: 320px;
+}
+
 .datepicker {
-  width: 320px;
-  background: white;
-  border: 1px solid rgba(31, 32, 65, 0.25);
-  box-sizing: border-box;
-  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-  border-radius: 4px;
-  padding: 20px;
+  font-family: Montserrat;
+  color: rgba(31, 32, 65, 0.5);
+  font-size: 12px;
 
   &--nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
+		border-bottom: none;
+		padding: 20px;
+		padding-bottom: 30px;
 
-    &-action {
-      .material-icons {
-        color: #bc9cff;
-      }
-    }
-
-    &-title {
-      font-family: Montserrat;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 19px;
-      line-height: 23px;
-      text-align: center;
-      color: #1f2041;
-    }
+		&-title {
+			
+			font-style: normal;
+			font-weight: bold;
+			font-size: 19px;
+			line-height: 23px;
+			text-align: center;
+			color: #1F2041;
+		}
+  }
+  
+  &--content {
+    padding: 0 20px;
   }
 
-  &--days-names {
-    display: flex;
-    justify-content: space-around;
+  &--days {
+    &-names {
+    margin: 0;
+    }
   }
 
   &--day-name {
@@ -41,66 +41,20 @@
     font-weight: bold;
     font-size: 12px;
     line-height: 40px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #bc9cff;
-  }
-
-  &--cells {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    margin-bottom: 20px;
+    color: #BC9CFF;
   }
 
   &--cell {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 40px;
-    text-align: center;
-    color: rgba(31, 32, 65, 0.5);
-
-    &.-other-month- {
-      font-weight: normal;
-      color: rgba(31, 32, 65, 0.25);
-    }
+    height: 40px;
 
     &.-current- {
-      color: #ffffff;
-      background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
-      border-radius: 22px;
+      color: white;
+      font-family: Montserrat;
+font-style: normal;
+font-weight: bold;
+font-size: 12px;
+background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+border-radius: 22px;
     }
-
-    &.-selected- {
-    }
-
-    &.-range-from- {
-      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-      border-radius: 22px;
-    }
-    
-    & .-range-to- {
-      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-      border-radius: 22px;
-    }
-
-    &.-in-range- {
-      background: linear-gradient(
-        180deg,
-        rgba(188, 156, 255, 0.25) 0%,
-        rgba(139, 164, 249, 0.25) 100%
-      );
-    }
-  }
-
-  &--button {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 12px;
-    text-transform: uppercase;
-    color: #bc9cff;
   }
 }
