@@ -1,18 +1,23 @@
 .headers-footers {
-  &__fon {
-    background: #F4F4F6;
-    min-height: 100vh;
+  background: #f4f4f6;
+  min-height: 100vh;
+
+  &__header {
+    padding-left: 20px;
+    margin: auto;
+    padding-top: 30px;
+    margin-bottom: 62px;
+    max-width: 1420px;
   }
 
   &__main {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    // flex-direction: column;
     gap: 40px;
   }
 
   &__footer-mobile {
-    display: grid;
-    justify-content: center;
-    grid-template-columns: minmax(auto, 768px);
+    width: 768px;
+    margin: auto;
   }
 }

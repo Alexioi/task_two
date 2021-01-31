@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "server": "webpack-dev-server",
+    "serverLocal": "webpack-dev-server --host 192.168.33.252",
     "build": "webpack"
   },
   "keywords": [],

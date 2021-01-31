@@ -1,27 +1,34 @@
 include ../button/button
 include ../logo/logo
 
-mixin header(login, name)
+mixin header(options)
+
+  if !options
+    - options = {}
+
   -
     var menuItems = [
-      { text: 'О нас', active: 'true' },
-      { text: 'Услуги' },
-      { text: 'Вакансии' },
-      { text: 'Новости' },
-      { text: 'Соглашения' }
+      { text: 'О нас', active: 'true', link: './404.html' },
+      { text: 'Услуги', more: true, link: './404.html' },
+      { text: 'Вакансии', link: './404.html' },
+      { text: 'Новости', link: './404.html' },
+      { text: 'Соглашения',  more: true, link: './404.html' }
     ]
 
   .header 
     .header__container
-      +logo({full: true}) 
-      .header__left-block
-        ul.header__nav-list
-          each menuItem in menuItems
-            li.header__nav-item
-              a.header__link(href='#' class= menuItem.active ? 'header__link_active' : '')=  menuItem.text
-        if login
-          .header__user-name= name
-        else
-          .header__buttons
-            +button({text: 'Войти', type: 'border'})
-            +button({text: 'Зарегистрироваться'})
+      .header__row
+        +logo({full: true}) 
+        .header__right-block
+          ul.header__nav-list
+            each menuItem in menuItems
+              li.header__nav-item
+                a.header__link(href=menuItem.link class= menuItem.active ? 'header__link_active' : '')=  menuItem.text 
+                  if menuItem.more
+                    span.material-icons expand_more
+          if options.name
+            .header__username= options.name
+          else
+            .header__buttons
+              +button({text: 'Войти', type: 'border'})
+              +button({text: 'Зарегистрироваться'})
