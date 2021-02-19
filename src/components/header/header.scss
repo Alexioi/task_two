@@ -1,52 +1,67 @@
 .header {
-  background: white;
-  padding: 15px 0;
-
-  &__container {
-    max-width: 1200px;
-    padding: 0 20px;
-    margin: auto;
+  background-color: white;
+  
+  &__inner-wrapper {
+     max-width: 1200px;
+     padding: 15px 20px;
+     margin: auto;
+     display: grid;
+     grid-template-areas: "logo nav";
+     grid-template-columns: 1fr auto;
+    
+      @media screen and (max-width: 1023px) {
+       grid-template-areas: "logo burger-button" 
+                            "nav  nav";
+     }
   }
-
-  &__row {
+  
+  &__logo {
+    grid-area: logo;
+  }
+  
+  &__nav {
+    grid-area: nav;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    @media screen and (max-width: 1000px) {
-      flex-direction: column;
+    
+    @media screen and (max-width: 1023px) {
+      display: none;
+    }
+    
+    @media screen and (max-width: 767px) {
+    flex-direction: column;
+    justify-content: center;
     }
   }
-
-  &__right-block {
-    display: inline-block;
+  
+  &__menu {
     display: flex;
-    gap: 20px;
-    align-items: center;
-    margin-left: auto;
-    @media screen and (max-width: 1000px) {
-      margin-left: 0;
-      flex-direction: column;
-    }
-  }
-
-  &__nav-list {
+    justify-content: space-between;
     padding: 0;
-    display: flex;
+    margin: 0;
+    list-style-type: none;
     gap: 20px;
-    list-style: none;
-    @media screen and (max-width: 1000px) {
-      flex-direction: column;
+    margin-right: 20px;
+    
+    @media screen and (max-width: 767px) {
+    flex-direction: column;
     }
+  }
+
+  &__menu-item {
+    display: flex;
   }
 
   &__link {
-    text-decoration: none;
     font-family: Montserrat;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
-    line-height: 24px;
     color: rgba(31, 32, 65, 0.5);
+    text-decoration: none;
     display: flex;
+    align-items: center;
 
     &:hover {
       color: rgba(31, 32, 65, 0.75);
@@ -54,6 +69,32 @@
     &_active {
       font-weight: bold;
       color: rgba(31, 32, 65, 0.75);
+    }
+  }
+  
+  &__buttons {
+    display: flex;
+    gap: 20px;
+
+    @media screen and (max-width: 767px) {
+      flex-direction: column;
+      }
+  }
+
+  &__button-sing-in {
+    width: 87px;
+  }
+
+  &__button-sing-up {
+    width: 196px;
+  }
+  
+  &__burger-button {
+    grid-area: burger-button;
+    display: none;
+    
+    @media screen and (max-width: 1023px) {
+      display: block;
     }
   }
 
@@ -65,13 +106,5 @@
     color: rgba(31, 32, 65, 0.5);
     border-left: 1px solid rgba(31, 32, 65, 0.1);
     padding: 7px 0 6px 20px;
-  }
-
-  &__buttons {
-    display: flex;
-    gap: 20px;
-      @media screen and (max-width: 1000px) {
-      flex-direction: column;
-    }
   }
 }

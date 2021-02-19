@@ -125,7 +125,8 @@
   }
 
   &__buttons-row {
-    display: flex;
+    display: grid;
+    grid-template-columns: 99px 99px;
     gap: 20px;
   }
 

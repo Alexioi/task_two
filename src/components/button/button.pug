@@ -2,10 +2,10 @@ mixin button(options)
   - 
     var buttonClass = options.hover ? 'button_hovered' : ''
     var textClass = options.type == 'outline' ? 'button__text_outline' : ''
-    buttonClass += options.type == 'long' ? ' button_long' : ''
-
+    textClass += options.type == 'long' ? ' button__text_long' : ''
+    textClass += options.size == 'low' ? ' button__text_low' : ''
 
   button(class= buttonClass).button
     span.button__text(class= textClass)= options.text
       if options.type == 'long'
-        span.button__test.material-icons arrow_forward
+        span.button__forward.material-icons arrow_forward

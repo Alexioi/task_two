@@ -8,27 +8,32 @@ mixin header(options)
 
   -
     var menuItems = [
-      { text: 'О нас', active: 'true', link: './404.html' },
-      { text: 'Услуги', more: true, link: './404.html' },
-      { text: 'Вакансии', link: './404.html' },
-      { text: 'Новости', link: './404.html' },
-      { text: 'Соглашения',  more: true, link: './404.html' }
+      { text: 'О нас', active: 'true', link: './404' },
+      { text: 'Услуги', more: true, link: './404' },
+      { text: 'Вакансии', link: './404' },
+      { text: 'Новости', link: './404' },
+      { text: 'Соглашения',  more: true, link: './404' }
     ]
 
-  .header 
-    .header__container
-      .header__row
+  header.header
+    .header__inner-wrapper
+      span.header__logo
         +logo({full: true}) 
-        .header__right-block
-          ul.header__nav-list
-            each menuItem in menuItems
-              li.header__nav-item
-                a.header__link(href=menuItem.link class= menuItem.active ? 'header__link_active' : '')=  menuItem.text 
-                  if menuItem.more
-                    span.material-icons expand_more
+      nav.header__nav.js-header__nav
+        ul.header__menu
+          each menuItem in menuItems
+            li.header__menu-item
+              a.header__link(href=menuItem.link class= menuItem.active ? 'header__link_active' : '')=  menuItem.text 
+                if menuItem.more
+                  span.material-icons expand_more
+        .header__buttons
           if options.name
             .header__username= options.name
           else
             .header__buttons
-              +button({text: 'Войти', type: 'border'})
-              +button({text: 'Зарегистрироваться'})
+              .header__button-sing-in
+                +button({text: 'Войти', type: 'outline', size: 'low'})
+              .header__button-sing-up
+                +button({text: 'Зарегистрироваться', size: 'low'})
+      button.header__burger-button.js-header__burger-button =
+
