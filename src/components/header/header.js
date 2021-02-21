@@ -7,4 +7,6 @@ function toggleMenu() {
 const burgerButton = document.querySelector('.js-header__burger-button');
 const headerNav = document.querySelector('.js-header__nav');
 
-burgerButton.addEventListener('click', toggleMenu);
+if (burgerButton !== null) {
+	burgerButton.addEventListener('click', toggleMenu);
+}
